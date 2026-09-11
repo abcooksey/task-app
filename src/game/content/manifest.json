@@ -1,0 +1,1834 @@
+{
+  "version": 1,
+  "description": "Game asset manifest for Homestead. Maps texture keys to asset files.",
+  "assets": {
+    "decor_basket_woven": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_basket_woven.png",
+      "width": 60,
+      "height": 67,
+      "description": "Decorative item: decor basket woven"
+    },
+    "decor_blanket_knit": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_blanket_knit.png",
+      "width": 64,
+      "height": 47,
+      "description": "Decorative item: decor blanket knit"
+    },
+    "decor_candelabra": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_candelabra.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor candelabra"
+    },
+    "decor_cocoa_station": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_cocoa_station.png",
+      "width": 35,
+      "height": 43,
+      "description": "Decorative item: decor cocoa station"
+    },
+    "decor_cushion_set": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_cushion_set.png",
+      "width": 60,
+      "height": 67,
+      "description": "Decorative item: decor cushion set"
+    },
+    "decor_jack_o_lantern": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_jack_o_lantern.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor jack o lantern"
+    },
+    "decor_lamp_antique": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_antique.png",
+      "width": 24,
+      "height": 105,
+      "description": "Decorative item: decor lamp antique"
+    },
+    "decor_lamp_floor": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_floor.png",
+      "width": 24,
+      "height": 105,
+      "description": "Decorative item: decor lamp floor"
+    },
+    "decor_lamp_floor_arc": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_floor_arc.png",
+      "width": 24,
+      "height": 108,
+      "description": "Decorative item: decor lamp floor arc"
+    },
+    "decor_lamp_modern": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_modern.png",
+      "width": 24,
+      "height": 108,
+      "description": "Decorative item: decor lamp modern"
+    },
+    "decor_lamp_table": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_table.png",
+      "width": 24,
+      "height": 49,
+      "description": "Decorative item: decor lamp table"
+    },
+    "decor_lamp_warm": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lamp_warm.png",
+      "width": 24,
+      "height": 108,
+      "description": "Decorative item: decor lamp warm"
+    },
+    "decor_plant_cactus": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_cactus.png",
+      "width": 14,
+      "height": 20,
+      "description": "Decorative item: decor plant cactus"
+    },
+    "decor_plant_fern": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_fern.png",
+      "width": 28,
+      "height": 85,
+      "description": "Decorative item: decor plant fern"
+    },
+    "decor_plant_hanging": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_hanging.png",
+      "width": 14,
+      "height": 20,
+      "description": "Decorative item: decor plant hanging"
+    },
+    "decor_plant_large": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_large.png",
+      "width": 28,
+      "height": 85,
+      "description": "Decorative item: decor plant large"
+    },
+    "decor_plant_medium": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_medium.png",
+      "width": 28,
+      "height": 85,
+      "description": "Decorative item: decor plant medium"
+    },
+    "decor_plant_monstera": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_monstera.png",
+      "width": 28,
+      "height": 85,
+      "description": "Decorative item: decor plant monstera"
+    },
+    "decor_plant_small": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_small.png",
+      "width": 14,
+      "height": 18,
+      "description": "Decorative item: decor plant small"
+    },
+    "decor_plant_succulent": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_plant_succulent.png",
+      "width": 14,
+      "height": 18,
+      "description": "Decorative item: decor plant succulent"
+    },
+    "decor_pumpkin_large": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_pumpkin_large.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor pumpkin large"
+    },
+    "decor_pumpkin_small": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_pumpkin_small.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor pumpkin small"
+    },
+    "decor_string_lights": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_string_lights.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor string lights"
+    },
+    "decor_tree_holiday": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_tree_holiday.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor tree holiday"
+    },
+    "decor_vase_tall": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_vase_tall.png",
+      "width": 14,
+      "height": 19,
+      "description": "Decorative item: decor vase tall"
+    },
+    "decor_wreath_door": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_wreath_door.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor wreath door"
+    },
+    "floor_finish_carpet_grey": {
+      "type": "image",
+      "path": "/assets/sprites/floor_finish/floor_finish_carpet_grey.png",
+      "width": 64,
+      "height": 64,
+      "description": "Floor finish/material: floor finish carpet grey"
+    },
+    "floor_finish_light_wood": {
+      "type": "image",
+      "path": "/assets/sprites/floor_finish/floor_finish_light_wood.png",
+      "width": 64,
+      "height": 64,
+      "description": "Floor finish/material: floor finish light wood"
+    },
+    "floor_finish_stone": {
+      "type": "image",
+      "path": "/assets/sprites/floor_finish/floor_finish_stone.png",
+      "width": 64,
+      "height": 64,
+      "description": "Floor finish/material: floor finish stone"
+    },
+    "floor_finish_tile_white": {
+      "type": "image",
+      "path": "/assets/sprites/floor_finish/floor_finish_tile_white.png",
+      "width": 64,
+      "height": 64,
+      "description": "Floor finish/material: floor finish tile white"
+    },
+    "floor_finish_warm_wood": {
+      "type": "image",
+      "path": "/assets/sprites/floor_finish/floor_finish_warm_wood.png",
+      "width": 64,
+      "height": 64,
+      "description": "Floor finish/material: floor finish warm wood"
+    },
+    "furniture_armchair_plush": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_armchair_plush.png",
+      "width": 91,
+      "height": 106,
+      "description": "Furniture item: furniture armchair plush"
+    },
+    "furniture_armchair_vintage": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_armchair_vintage.png",
+      "width": 91,
+      "height": 106,
+      "description": "Furniture item: furniture armchair vintage"
+    },
+    "furniture_bed_double": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bed_double.png",
+      "width": 215,
+      "height": 190,
+      "description": "Furniture item: furniture bed double"
+    },
+    "furniture_bed_single": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bed_single.png",
+      "width": 175,
+      "height": 162,
+      "description": "Furniture item: furniture bed single"
+    },
+    "furniture_bookshelf_antique": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bookshelf_antique.png",
+      "width": 67,
+      "height": 140,
+      "description": "Furniture item: furniture bookshelf antique"
+    },
+    "furniture_bookshelf_short": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bookshelf_short.png",
+      "width": 67,
+      "height": 90,
+      "description": "Furniture item: furniture bookshelf short"
+    },
+    "furniture_bookshelf_tall": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bookshelf_tall.png",
+      "width": 67,
+      "height": 140,
+      "description": "Furniture item: furniture bookshelf tall"
+    },
+    "furniture_cabinet": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet.png",
+      "width": 67,
+      "height": 137,
+      "description": "Furniture item: furniture cabinet"
+    },
+    "furniture_chair_dining": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_dining.png",
+      "width": 42,
+      "height": 79,
+      "description": "Furniture item: furniture chair dining"
+    },
+    "furniture_chair_modern": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_modern.png",
+      "width": 105,
+      "height": 133,
+      "description": "Furniture item: furniture chair modern"
+    },
+    "furniture_chair_wooden": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_wooden.png",
+      "width": 42,
+      "height": 75,
+      "description": "Furniture item: furniture chair wooden"
+    },
+    "furniture_desk_modern": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_desk_modern.png",
+      "width": 202,
+      "height": 139,
+      "description": "Furniture item: furniture desk modern"
+    },
+    "furniture_desk_simple": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_desk_simple.png",
+      "width": 116,
+      "height": 122,
+      "description": "Furniture item: furniture desk simple"
+    },
+    "furniture_desk_vintage": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_desk_vintage.png",
+      "width": 202,
+      "height": 139,
+      "description": "Furniture item: furniture desk vintage"
+    },
+    "furniture_desk_wooden": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_desk_wooden.png",
+      "width": 116,
+      "height": 122,
+      "description": "Furniture item: furniture desk wooden"
+    },
+    "furniture_dresser": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_dresser.png",
+      "width": 50,
+      "height": 62,
+      "description": "Furniture item: furniture dresser"
+    },
+    "furniture_dresser_vintage": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_dresser_vintage.png",
+      "width": 50,
+      "height": 62,
+      "description": "Furniture item: furniture dresser vintage"
+    },
+    "furniture_nightstand": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_nightstand.png",
+      "width": 50,
+      "height": 59,
+      "description": "Furniture item: furniture nightstand"
+    },
+    "furniture_plant_stand": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_plant_stand.png",
+      "width": 78,
+      "height": 95,
+      "description": "Furniture item: furniture plant stand"
+    },
+    "furniture_reading_chair": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_reading_chair.png",
+      "width": 105,
+      "height": 133,
+      "description": "Furniture item: furniture reading chair"
+    },
+    "furniture_sofa_basic": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sofa_basic.png",
+      "width": 156,
+      "height": 142,
+      "description": "Furniture item: furniture sofa basic"
+    },
+    "furniture_sofa_blue": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sofa_blue.png",
+      "width": 141,
+      "height": 141,
+      "description": "Furniture item: furniture sofa blue"
+    },
+    "furniture_sofa_cozy": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sofa_cozy.png",
+      "width": 280,
+      "height": 166,
+      "description": "Furniture item: furniture sofa cozy"
+    },
+    "furniture_sofa_cream": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sofa_cream.png",
+      "width": 179,
+      "height": 141,
+      "description": "Furniture item: furniture sofa cream"
+    },
+    "furniture_sofa_modern": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sofa_modern.png",
+      "width": 204,
+      "height": 149,
+      "description": "Furniture item: furniture sofa modern"
+    },
+    "furniture_stool": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_stool.png",
+      "width": 38,
+      "height": 67,
+      "description": "Furniture item: furniture stool"
+    },
+    "furniture_table_coffee": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_coffee.png",
+      "width": 110,
+      "height": 102,
+      "description": "Furniture item: furniture table coffee"
+    },
+    "furniture_table_dining": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_dining.png",
+      "width": 113,
+      "height": 95,
+      "description": "Furniture item: furniture table dining"
+    },
+    "furniture_table_glass": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_glass.png",
+      "width": 110,
+      "height": 102,
+      "description": "Furniture item: furniture table glass"
+    },
+    "furniture_table_side": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_side.png",
+      "width": 78,
+      "height": 95,
+      "description": "Furniture item: furniture table side"
+    },
+    "furniture_tv_stand": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_tv_stand.png",
+      "width": 109,
+      "height": 110,
+      "description": "Furniture item: furniture tv stand"
+    },
+    "furniture_wardrobe": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_wardrobe.png",
+      "width": 67,
+      "height": 137,
+      "description": "Furniture item: furniture wardrobe"
+    },
+    "outdoor_bench_wooden": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_bench_wooden.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor bench wooden"
+    },
+    "outdoor_bird_bath": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_bird_bath.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor bird bath"
+    },
+    "outdoor_chair_basic": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_chair_basic.png",
+      "width": 42,
+      "height": 78,
+      "description": "Outdoor item: outdoor chair basic"
+    },
+    "outdoor_fire_pit": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_fire_pit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor fire pit"
+    },
+    "outdoor_flower_bed": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_flower_bed.png",
+      "width": 14,
+      "height": 19,
+      "description": "Outdoor item: outdoor flower bed"
+    },
+    "outdoor_ghost_sheet": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_ghost_sheet.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor ghost sheet"
+    },
+    "outdoor_hay_bale": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_hay_bale.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor hay bale"
+    },
+    "outdoor_lantern_tall": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_lantern_tall.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor lantern tall"
+    },
+    "outdoor_lights_path": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_lights_path.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor lights path"
+    },
+    "outdoor_path_stones": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_path_stones.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor path stones"
+    },
+    "outdoor_planter_large": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_planter_large.png",
+      "width": 28,
+      "height": 85,
+      "description": "Outdoor item: outdoor planter large"
+    },
+    "outdoor_planter_small": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_planter_small.png",
+      "width": 14,
+      "height": 18,
+      "description": "Outdoor item: outdoor planter small"
+    },
+    "outdoor_scarecrow": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_scarecrow.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor scarecrow"
+    },
+    "outdoor_snowman": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_snowman.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor snowman"
+    },
+    "outdoor_string_lights": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_string_lights.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor string lights"
+    },
+    "outdoor_table_bistro": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_table_bistro.png",
+      "width": 113,
+      "height": 95,
+      "description": "Outdoor item: outdoor table bistro"
+    },
+    "outdoor_table_small": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_table_small.png",
+      "width": 110,
+      "height": 102,
+      "description": "Outdoor item: outdoor table small"
+    },
+    "outdoor_tombstone": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_tombstone.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor tombstone"
+    },
+    "outdoor_tree_small": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_tree_small.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor tree small"
+    },
+    "rug_autumn_leaves": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_autumn_leaves.png",
+      "width": 134,
+      "height": 97,
+      "description": "Rug/floor covering: rug autumn leaves"
+    },
+    "rug_basic": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_basic.png",
+      "width": 257,
+      "height": 184,
+      "description": "Rug/floor covering: rug basic"
+    },
+    "rug_circular_soft": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_circular_soft.png",
+      "width": 202,
+      "height": 144,
+      "description": "Rug/floor covering: rug circular soft"
+    },
+    "rug_modern_geo": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_modern_geo.png",
+      "width": 189,
+      "height": 135,
+      "description": "Rug/floor covering: rug modern geo"
+    },
+    "rug_rectangular": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_rectangular.png",
+      "width": 257,
+      "height": 184,
+      "description": "Rug/floor covering: rug rectangular"
+    },
+    "rug_round_cream": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_round_cream.png",
+      "width": 134,
+      "height": 97,
+      "description": "Rug/floor covering: rug round cream"
+    },
+    "rug_sheepskin": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_sheepskin.png",
+      "width": 202,
+      "height": 144,
+      "description": "Rug/floor covering: rug sheepskin"
+    },
+    "rug_soft_square": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_soft_square.png",
+      "width": 189,
+      "height": 135,
+      "description": "Rug/floor covering: rug soft square"
+    },
+    "rug_spiderweb": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_spiderweb.png",
+      "width": 64,
+      "height": 64,
+      "description": "Rug/floor covering: rug spiderweb"
+    },
+    "rug_vintage_persian": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_vintage_persian.png",
+      "width": 257,
+      "height": 184,
+      "description": "Rug/floor covering: rug vintage persian"
+    },
+    "rug_winter_pattern": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_winter_pattern.png",
+      "width": 257,
+      "height": 184,
+      "description": "Rug/floor covering: rug winter pattern"
+    },
+    "surface_book_open": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_book_open.png",
+      "width": 26,
+      "height": 27,
+      "description": "Surface decoration: surface book open"
+    },
+    "surface_book_stack": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_book_stack.png",
+      "width": 26,
+      "height": 27,
+      "description": "Surface decoration: surface book stack"
+    },
+    "surface_books": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_books.png",
+      "width": 26,
+      "height": 27,
+      "description": "Surface decoration: surface books"
+    },
+    "surface_candle_set": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_candle_set.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface candle set"
+    },
+    "surface_candle_small": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_candle_small.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface candle small"
+    },
+    "surface_gingerbread": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_gingerbread.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface gingerbread"
+    },
+    "surface_lamp_small": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_lamp_small.png",
+      "width": 24,
+      "height": 49,
+      "description": "Surface decoration: surface lamp small"
+    },
+    "surface_mug": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_mug.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface mug"
+    },
+    "surface_mug_cocoa": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_mug_cocoa.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface mug cocoa"
+    },
+    "surface_mug_coffee": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_mug_coffee.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface mug coffee"
+    },
+    "surface_photo_frame": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_photo_frame.png",
+      "width": 47,
+      "height": 59,
+      "description": "Surface decoration: surface photo frame"
+    },
+    "surface_plant_tiny": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_plant_tiny.png",
+      "width": 14,
+      "height": 18,
+      "description": "Surface decoration: surface plant tiny"
+    },
+    "surface_potion_bottles": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_potion_bottles.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface potion bottles"
+    },
+    "surface_sculpture": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_sculpture.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface sculpture"
+    },
+    "surface_skull_candle": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_skull_candle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface skull candle"
+    },
+    "surface_snow_globe": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_snow_globe.png",
+      "width": 64,
+      "height": 64,
+      "description": "Surface decoration: surface snow globe"
+    },
+    "surface_typewriter": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_typewriter.png",
+      "width": 41,
+      "height": 33,
+      "description": "Surface decoration: surface typewriter"
+    },
+    "surface_vase_small": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_vase_small.png",
+      "width": 14,
+      "height": 19,
+      "description": "Surface decoration: surface vase small"
+    },
+    "wall_art_abstract": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_art_abstract.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall art abstract"
+    },
+    "wall_autumn_wreath": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_autumn_wreath.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall autumn wreath"
+    },
+    "wall_bat_garland": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_bat_garland.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall bat garland"
+    },
+    "wall_clock_basic": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_clock_basic.png",
+      "width": 31,
+      "height": 28,
+      "description": "Wall decoration: wall clock basic"
+    },
+    "wall_clock_round": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_clock_round.png",
+      "width": 31,
+      "height": 28,
+      "description": "Wall decoration: wall clock round"
+    },
+    "wall_frame_ornate": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_frame_ornate.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall frame ornate"
+    },
+    "wall_mirror_oval": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_mirror_oval.png",
+      "width": 46,
+      "height": 74,
+      "description": "Wall decoration: wall mirror oval"
+    },
+    "wall_photo_frame": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_photo_frame.png",
+      "width": 47,
+      "height": 59,
+      "description": "Wall decoration: wall photo frame"
+    },
+    "wall_poster_simple": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_poster_simple.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall poster simple"
+    },
+    "wall_shelf_floating": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_shelf_floating.png",
+      "width": 67,
+      "height": 90,
+      "description": "Wall decoration: wall shelf floating"
+    },
+    "wall_stockings": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_stockings.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall decoration: wall stockings"
+    },
+    "wall_tapestry": {
+      "type": "image",
+      "path": "/assets/sprites/wall/wall_tapestry.png",
+      "width": 257,
+      "height": 184,
+      "description": "Wall decoration: wall tapestry"
+    },
+    "wall_finish_burnt_orange": {
+      "type": "image",
+      "path": "/assets/sprites/wall_finish/wall_finish_burnt_orange.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall finish/paint: wall finish burnt orange"
+    },
+    "wall_finish_cream": {
+      "type": "image",
+      "path": "/assets/sprites/wall_finish/wall_finish_cream.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall finish/paint: wall finish cream"
+    },
+    "wall_finish_navy": {
+      "type": "image",
+      "path": "/assets/sprites/wall_finish/wall_finish_navy.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall finish/paint: wall finish navy"
+    },
+    "wall_finish_sage": {
+      "type": "image",
+      "path": "/assets/sprites/wall_finish/wall_finish_sage.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall finish/paint: wall finish sage"
+    },
+    "wall_finish_white": {
+      "type": "image",
+      "path": "/assets/sprites/wall_finish/wall_finish_white.png",
+      "width": 64,
+      "height": 64,
+      "description": "Wall finish/paint: wall finish white"
+    }
+  },
+  "atlases": {},
+  "notes": {
+    "catalog_items": "Catalog item textures are loaded dynamically based on textureKey in catalog.json",
+    "asset_source": "Assets sourced from Kenney.nl (CC0 license)",
+    "avatar_assets": "Avatar layer sprites for character customization"
+  },
+  "avatarAssets": {
+    "skin_light_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_light_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_light (idle)"
+    },
+    "skin_light_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_light_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_light (sit)"
+    },
+    "skin_light_medium_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_light_medium_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_light_medium (idle)"
+    },
+    "skin_light_medium_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_light_medium_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_light_medium (sit)"
+    },
+    "skin_medium_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_medium_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_medium (idle)"
+    },
+    "skin_medium_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_medium_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_medium (sit)"
+    },
+    "skin_medium_dark_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_medium_dark_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_medium_dark (idle)"
+    },
+    "skin_medium_dark_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_medium_dark_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_medium_dark (sit)"
+    },
+    "skin_dark_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_dark_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_dark (idle)"
+    },
+    "skin_dark_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_dark_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_dark (sit)"
+    },
+    "skin_deep_idle": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_deep_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_deep (idle)"
+    },
+    "skin_deep_sit": {
+      "type": "image",
+      "path": "/assets/avatar/body/skin_deep_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Body: skin_deep (sit)"
+    },
+    "eyes_brown_idle": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_brown_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_brown (idle)"
+    },
+    "eyes_brown_sit": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_brown_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_brown (sit)"
+    },
+    "eyes_blue_idle": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_blue_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_blue (idle)"
+    },
+    "eyes_blue_sit": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_blue_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_blue (sit)"
+    },
+    "eyes_green_idle": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_green_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_green (idle)"
+    },
+    "eyes_green_sit": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_green_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_green (sit)"
+    },
+    "eyes_hazel_idle": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_hazel_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_hazel (idle)"
+    },
+    "eyes_hazel_sit": {
+      "type": "image",
+      "path": "/assets/avatar/eyes/eyes_hazel_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Eyes: eyes_hazel (sit)"
+    },
+    "hair_short_hair_black_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_black_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_black (idle)"
+    },
+    "hair_short_hair_black_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_black_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_black (idle)"
+    },
+    "hair_short_hair_black_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_black_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_black (sit)"
+    },
+    "hair_short_hair_black_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_black_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_black (sit)"
+    },
+    "hair_short_hair_dark_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_dark_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_dark_brown (idle)"
+    },
+    "hair_short_hair_dark_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_dark_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_dark_brown (idle)"
+    },
+    "hair_short_hair_dark_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_dark_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_dark_brown (sit)"
+    },
+    "hair_short_hair_dark_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_dark_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_dark_brown (sit)"
+    },
+    "hair_short_hair_light_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_light_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_light_brown (idle)"
+    },
+    "hair_short_hair_light_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_light_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_light_brown (idle)"
+    },
+    "hair_short_hair_light_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_light_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_light_brown (sit)"
+    },
+    "hair_short_hair_light_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_light_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_light_brown (sit)"
+    },
+    "hair_short_hair_blonde_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_blonde_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_blonde (idle)"
+    },
+    "hair_short_hair_blonde_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_blonde_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_blonde (idle)"
+    },
+    "hair_short_hair_blonde_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_blonde_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_blonde (sit)"
+    },
+    "hair_short_hair_blonde_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_blonde_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_blonde (sit)"
+    },
+    "hair_short_hair_red_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_red_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_red (idle)"
+    },
+    "hair_short_hair_red_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_red_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_red (idle)"
+    },
+    "hair_short_hair_red_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_red_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_red (sit)"
+    },
+    "hair_short_hair_red_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_red_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_red (sit)"
+    },
+    "hair_short_hair_auburn_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_auburn_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_auburn (idle)"
+    },
+    "hair_short_hair_auburn_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_auburn_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_auburn (idle)"
+    },
+    "hair_short_hair_auburn_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_auburn_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_auburn (sit)"
+    },
+    "hair_short_hair_auburn_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_auburn_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_auburn (sit)"
+    },
+    "hair_short_hair_grey_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_grey_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_grey (idle)"
+    },
+    "hair_short_hair_grey_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_grey_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_grey (idle)"
+    },
+    "hair_short_hair_grey_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_grey_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_grey (sit)"
+    },
+    "hair_short_hair_grey_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_grey_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_grey (sit)"
+    },
+    "hair_short_hair_white_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_white_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_white (idle)"
+    },
+    "hair_short_hair_white_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_white_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_white (idle)"
+    },
+    "hair_short_hair_white_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_white_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_short hair_white (sit)"
+    },
+    "hair_short_hair_white_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_short_hair_white_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_short hair_white (sit)"
+    },
+    "hair_medium_hair_black_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_black_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_black (idle)"
+    },
+    "hair_medium_hair_black_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_black_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_black (idle)"
+    },
+    "hair_medium_hair_black_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_black_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_black (sit)"
+    },
+    "hair_medium_hair_black_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_black_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_black (sit)"
+    },
+    "hair_medium_hair_dark_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_dark_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_dark_brown (idle)"
+    },
+    "hair_medium_hair_dark_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_dark_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_dark_brown (idle)"
+    },
+    "hair_medium_hair_dark_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_dark_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_dark_brown (sit)"
+    },
+    "hair_medium_hair_dark_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_dark_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_dark_brown (sit)"
+    },
+    "hair_medium_hair_light_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_light_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_light_brown (idle)"
+    },
+    "hair_medium_hair_light_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_light_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_light_brown (idle)"
+    },
+    "hair_medium_hair_light_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_light_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_light_brown (sit)"
+    },
+    "hair_medium_hair_light_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_light_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_light_brown (sit)"
+    },
+    "hair_medium_hair_blonde_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_blonde_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_blonde (idle)"
+    },
+    "hair_medium_hair_blonde_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_blonde_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_blonde (idle)"
+    },
+    "hair_medium_hair_blonde_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_blonde_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_blonde (sit)"
+    },
+    "hair_medium_hair_blonde_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_blonde_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_blonde (sit)"
+    },
+    "hair_medium_hair_red_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_red_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_red (idle)"
+    },
+    "hair_medium_hair_red_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_red_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_red (idle)"
+    },
+    "hair_medium_hair_red_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_red_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_red (sit)"
+    },
+    "hair_medium_hair_red_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_red_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_red (sit)"
+    },
+    "hair_medium_hair_auburn_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_auburn_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_auburn (idle)"
+    },
+    "hair_medium_hair_auburn_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_auburn_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_auburn (idle)"
+    },
+    "hair_medium_hair_auburn_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_auburn_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_auburn (sit)"
+    },
+    "hair_medium_hair_auburn_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_auburn_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_auburn (sit)"
+    },
+    "hair_medium_hair_grey_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_grey_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_grey (idle)"
+    },
+    "hair_medium_hair_grey_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_grey_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_grey (idle)"
+    },
+    "hair_medium_hair_grey_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_grey_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_grey (sit)"
+    },
+    "hair_medium_hair_grey_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_grey_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_grey (sit)"
+    },
+    "hair_medium_hair_white_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_white_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_white (idle)"
+    },
+    "hair_medium_hair_white_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_white_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_white (idle)"
+    },
+    "hair_medium_hair_white_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_white_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_medium hair_white (sit)"
+    },
+    "hair_medium_hair_white_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_medium_hair_white_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_medium hair_white (sit)"
+    },
+    "hair_long_hair_black_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_black_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_black (idle)"
+    },
+    "hair_long_hair_black_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_black_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_black (idle)"
+    },
+    "hair_long_hair_black_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_black_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_black (sit)"
+    },
+    "hair_long_hair_black_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_black_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_black (sit)"
+    },
+    "hair_long_hair_dark_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_dark_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_dark_brown (idle)"
+    },
+    "hair_long_hair_dark_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_dark_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_dark_brown (idle)"
+    },
+    "hair_long_hair_dark_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_dark_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_dark_brown (sit)"
+    },
+    "hair_long_hair_dark_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_dark_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_dark_brown (sit)"
+    },
+    "hair_long_hair_light_brown_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_light_brown_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_light_brown (idle)"
+    },
+    "hair_long_hair_light_brown_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_light_brown_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_light_brown (idle)"
+    },
+    "hair_long_hair_light_brown_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_light_brown_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_light_brown (sit)"
+    },
+    "hair_long_hair_light_brown_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_light_brown_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_light_brown (sit)"
+    },
+    "hair_long_hair_blonde_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_blonde_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_blonde (idle)"
+    },
+    "hair_long_hair_blonde_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_blonde_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_blonde (idle)"
+    },
+    "hair_long_hair_blonde_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_blonde_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_blonde (sit)"
+    },
+    "hair_long_hair_blonde_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_blonde_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_blonde (sit)"
+    },
+    "hair_long_hair_red_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_red_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_red (idle)"
+    },
+    "hair_long_hair_red_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_red_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_red (idle)"
+    },
+    "hair_long_hair_red_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_red_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_red (sit)"
+    },
+    "hair_long_hair_red_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_red_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_red (sit)"
+    },
+    "hair_long_hair_auburn_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_auburn_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_auburn (idle)"
+    },
+    "hair_long_hair_auburn_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_auburn_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_auburn (idle)"
+    },
+    "hair_long_hair_auburn_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_auburn_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_auburn (sit)"
+    },
+    "hair_long_hair_auburn_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_auburn_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_auburn (sit)"
+    },
+    "hair_long_hair_grey_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_grey_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_grey (idle)"
+    },
+    "hair_long_hair_grey_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_grey_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_grey (idle)"
+    },
+    "hair_long_hair_grey_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_grey_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_grey (sit)"
+    },
+    "hair_long_hair_grey_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_grey_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_grey (sit)"
+    },
+    "hair_long_hair_white_back_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_white_back_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_white (idle)"
+    },
+    "hair_long_hair_white_front_idle": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_white_front_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_white (idle)"
+    },
+    "hair_long_hair_white_back_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_white_back_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair back: hair_long hair_white (sit)"
+    },
+    "hair_long_hair_white_front_sit": {
+      "type": "image",
+      "path": "/assets/avatar/hair/hair_long_hair_white_front_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Hair front: hair_long hair_white (sit)"
+    },
+    "starter_tee_white_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_white_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_white (idle)"
+    },
+    "starter_tee_white_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_white_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_white (sit)"
+    },
+    "starter_tee_grey_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_grey_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_grey (idle)"
+    },
+    "starter_tee_grey_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_grey_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_grey (sit)"
+    },
+    "starter_tee_black_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_black_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_black (idle)"
+    },
+    "starter_tee_black_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_tee_black_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Top: starter_tee_black (sit)"
+    },
+    "starter_pants_blue_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_blue_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_blue (idle)"
+    },
+    "starter_pants_blue_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_blue_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_blue (sit)"
+    },
+    "starter_pants_black_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_black_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_black (idle)"
+    },
+    "starter_pants_black_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_black_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_black (sit)"
+    },
+    "starter_pants_khaki_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_khaki_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_khaki (idle)"
+    },
+    "starter_pants_khaki_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_pants_khaki_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Bottom: starter_pants_khaki (sit)"
+    },
+    "starter_sneakers_white_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_sneakers_white_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Shoes: starter_sneakers_white (idle)"
+    },
+    "starter_sneakers_white_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_sneakers_white_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Shoes: starter_sneakers_white (sit)"
+    },
+    "starter_sneakers_black_idle": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_sneakers_black_idle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Shoes: starter_sneakers_black (idle)"
+    },
+    "starter_sneakers_black_sit": {
+      "type": "image",
+      "path": "/assets/avatar/clothing/starter_sneakers_black_sit.png",
+      "width": 64,
+      "height": 64,
+      "description": "Shoes: starter_sneakers_black (sit)"
+    }
+  }
+}

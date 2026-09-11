@@ -1,0 +1,677 @@
+{
+  "rotationGuarantees": {
+    "wearablePerWeek": 1,
+    "comment": "At least one wearable item appears in the store each week"
+  },
+  "seasonal": [
+    {
+      "id": "autumn_2026",
+      "name": "Autumn Collection",
+      "from": "09-01",
+      "to": "10-15",
+      "items": [
+        "rug_autumn_leaves",
+        "decor_pumpkin_small",
+        "decor_pumpkin_large",
+        "wall_autumn_wreath",
+        "outdoor_hay_bale",
+        "outdoor_scarecrow",
+        "floor_finish_warm_wood",
+        "wall_finish_burnt_orange"
+      ]
+    },
+    {
+      "id": "halloween_2026",
+      "name": "Spooky Season",
+      "from": "10-15",
+      "to": "11-01",
+      "items": [
+        "decor_jack_o_lantern",
+        "decor_candelabra",
+        "wall_bat_garland",
+        "outdoor_tombstone",
+        "outdoor_ghost_sheet",
+        "rug_spiderweb",
+        "surface_skull_candle",
+        "surface_potion_bottles"
+      ],
+      "wearables": [
+        "wearable_witch_hat"
+      ]
+    },
+    {
+      "id": "cozy_november_2026",
+      "name": "Cozy Season",
+      "from": "11-01",
+      "to": "11-30",
+      "items": [
+        "furniture_armchair_plush",
+        "decor_blanket_knit",
+        "decor_cocoa_station",
+        "rug_sheepskin",
+        "wall_finish_cream",
+        "surface_mug_cocoa",
+        "surface_book_stack",
+        "outdoor_fire_pit"
+      ]
+    },
+    {
+      "id": "winter_holidays_2026",
+      "name": "Winter Holidays",
+      "from": "12-01",
+      "to": "12-31",
+      "items": [
+        "decor_tree_holiday",
+        "decor_string_lights",
+        "decor_wreath_door",
+        "wall_stockings",
+        "outdoor_snowman",
+        "outdoor_lights_path",
+        "rug_winter_pattern",
+        "surface_snow_globe",
+        "surface_gingerbread"
+      ],
+      "wearables": [
+        "wearable_sweater_holiday"
+      ]
+    },
+    {
+      "id": "spring_2027",
+      "name": "Spring Blooms",
+      "from": "03-20",
+      "to": "04-30",
+      "items": [],
+      "wearables": [
+        "wearable_bunny_ears",
+        "wearable_flower_crown"
+      ]
+    }
+  ],
+  "eventWeeks": [
+    {
+      "id": "cozy_reading_nook",
+      "name": "Cozy Reading Nook",
+      "week": 3,
+      "year": 2026,
+      "from": "09-21",
+      "to": "09-27",
+      "items": [
+        "furniture_bookshelf_tall",
+        "furniture_reading_chair",
+        "decor_lamp_floor_arc",
+        "rug_circular_soft",
+        "surface_book_open",
+        "surface_mug_coffee",
+        "wall_art_abstract",
+        "decor_plant_monstera"
+      ]
+    },
+    {
+      "id": "outdoor_living",
+      "name": "Outdoor Living",
+      "week": 7,
+      "year": 2026,
+      "from": "10-19",
+      "to": "10-25",
+      "items": [
+        "outdoor_bench_wooden",
+        "outdoor_table_bistro",
+        "outdoor_planter_large",
+        "outdoor_string_lights",
+        "outdoor_bird_bath",
+        "outdoor_lantern_tall",
+        "outdoor_path_stones",
+        "outdoor_flower_bed"
+      ]
+    }
+  ],
+  "rotationPools": {
+    "core": {
+      "description": "Essential furniture and decor",
+      "items": [
+        "furniture_sofa_basic",
+        "furniture_bed_single",
+        "furniture_bed_double",
+        "furniture_desk_simple",
+        "furniture_table_dining",
+        "furniture_chair_wooden",
+        "furniture_bookshelf_short",
+        "furniture_dresser",
+        "furniture_nightstand",
+        "furniture_wardrobe",
+        "decor_plant_small",
+        "decor_plant_medium",
+        "decor_lamp_table",
+        "decor_lamp_floor",
+        "rug_basic",
+        "rug_rectangular",
+        "wall_poster_simple",
+        "wall_mirror_oval",
+        "wall_clock_basic",
+        "surface_mug",
+        "surface_books",
+        "surface_vase_small",
+        "outdoor_planter_small",
+        "outdoor_chair_basic",
+        "outdoor_table_small"
+      ]
+    },
+    "cozy": {
+      "description": "Warm, comfortable items",
+      "items": [
+        "furniture_sofa_cozy",
+        "furniture_armchair_plush",
+        "decor_blanket_knit",
+        "decor_cushion_set",
+        "decor_lamp_warm",
+        "rug_sheepskin",
+        "rug_soft_square",
+        "surface_candle_set",
+        "surface_mug_cocoa",
+        "surface_book_stack",
+        "wall_tapestry",
+        "decor_cocoa_station"
+      ]
+    },
+    "plants": {
+      "description": "Indoor and outdoor greenery",
+      "items": [
+        "decor_plant_small",
+        "decor_plant_medium",
+        "decor_plant_large",
+        "decor_plant_hanging",
+        "decor_plant_succulent",
+        "decor_plant_monstera",
+        "outdoor_planter_small",
+        "outdoor_planter_large",
+        "outdoor_flower_bed",
+        "outdoor_tree_small"
+      ]
+    },
+    "modern": {
+      "description": "Clean, minimal design",
+      "items": [
+        "furniture_sofa_modern",
+        "furniture_desk_modern",
+        "furniture_chair_modern",
+        "furniture_table_glass",
+        "decor_lamp_modern",
+        "rug_modern_geo",
+        "wall_art_abstract",
+        "surface_sculpture"
+      ]
+    },
+    "vintage": {
+      "description": "Retro and antique style",
+      "items": [
+        "furniture_armchair_vintage",
+        "furniture_desk_vintage",
+        "furniture_bookshelf_antique",
+        "furniture_dresser_vintage",
+        "decor_lamp_antique",
+        "rug_vintage_persian",
+        "wall_frame_ornate",
+        "surface_typewriter"
+      ]
+    },
+    "outdoor": {
+      "description": "Yard and garden items",
+      "items": [
+        "outdoor_bench_wooden",
+        "outdoor_table_bistro",
+        "outdoor_chair_basic",
+        "outdoor_planter_small",
+        "outdoor_planter_large",
+        "outdoor_string_lights",
+        "outdoor_lantern_tall",
+        "outdoor_bird_bath",
+        "outdoor_path_stones",
+        "outdoor_flower_bed"
+      ]
+    }
+  },
+  "wearablePools": {
+    "basics": {
+      "description": "Everyday clothing essentials",
+      "items": [
+        "hair_pixie",
+        "hair_curly",
+        "hair_ponytail",
+        "top_sweater_cozy",
+        "top_hoodie",
+        "top_jacket_denim",
+        "top_tshirt_graphic",
+        "top_cardigan",
+        "bottom_jeans_dark",
+        "bottom_shorts",
+        "bottom_joggers",
+        "shoes_boots_ankle",
+        "shoes_loafers",
+        "accessory_glasses_round",
+        "accessory_beanie",
+        "accessory_cap"
+      ]
+    },
+    "fancy": {
+      "description": "Dressier options for special occasions",
+      "items": [
+        "hair_braids",
+        "hair_bun",
+        "hair_wavy_long",
+        "top_blouse_floral",
+        "top_dress_casual",
+        "top_turtleneck",
+        "bottom_skirt_mini",
+        "bottom_skirt_long",
+        "shoes_sandals",
+        "shoes_heels",
+        "accessory_glasses_square",
+        "accessory_sunglasses",
+        "accessory_earrings",
+        "accessory_headband"
+      ]
+    },
+    "outdoorsy": {
+      "description": "Active and outdoor wear",
+      "items": [
+        "hair_mohawk",
+        "hair_shaved",
+        "top_flannel",
+        "top_tank",
+        "top_crop",
+        "bottom_cargo",
+        "bottom_leggings",
+        "bottom_overalls",
+        "shoes_boots_hiking",
+        "shoes_slippers",
+        "accessory_scarf"
+      ]
+    },
+    "cozy_wearables": {
+      "description": "Warm and comfortable clothing",
+      "items": [
+        "top_sweater_cozy",
+        "top_hoodie",
+        "top_cardigan",
+        "top_turtleneck",
+        "bottom_joggers",
+        "bottom_leggings",
+        "shoes_slippers",
+        "accessory_beanie",
+        "accessory_scarf"
+      ]
+    }
+  },
+  "clothingCollections": [
+    {
+      "id": "cozy_collection",
+      "name": "Cozy Collection",
+      "type": "clothing_collection",
+      "week": 45,
+      "year": 2026,
+      "from": "11-02",
+      "to": "11-08",
+      "description": "Warm knits and cozy layers",
+      "items": [
+        "top_sweater_cozy",
+        "accessory_scarf",
+        "shoes_slippers",
+        "accessory_beanie"
+      ]
+    },
+    {
+      "id": "spring_collection",
+      "name": "Spring Collection",
+      "type": "clothing_collection",
+      "week": 12,
+      "year": 2027,
+      "from": "03-15",
+      "to": "03-21",
+      "description": "Fresh florals and light layers",
+      "items": [
+        "top_blouse_floral",
+        "top_cardigan",
+        "shoes_sandals",
+        "accessory_headband"
+      ]
+    },
+    {
+      "id": "summer_vibes",
+      "name": "Summer Vibes",
+      "type": "clothing_collection",
+      "week": 26,
+      "year": 2027,
+      "from": "06-21",
+      "to": "06-27",
+      "description": "Cool and casual summer styles",
+      "items": [
+        "top_tank",
+        "top_crop",
+        "bottom_shorts",
+        "accessory_sunglasses"
+      ]
+    },
+    {
+      "id": "back_to_basics",
+      "name": "Back to Basics",
+      "type": "clothing_collection",
+      "week": 36,
+      "year": 2027,
+      "from": "09-01",
+      "to": "09-07",
+      "description": "Classic essentials for any occasion",
+      "items": [
+        "top_jacket_denim",
+        "bottom_jeans_dark",
+        "shoes_loafers",
+        "accessory_glasses_round"
+      ]
+    }
+  ],
+  "weeklySchedule": [
+    {
+      "week": 1,
+      "year": 2026,
+      "from": "09-07",
+      "to": "09-13",
+      "theme": "Launch Week",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 2
+      },
+      "preferWearablePools": ["basics"]
+    },
+    {
+      "week": 2,
+      "year": 2026,
+      "from": "09-14",
+      "to": "09-20",
+      "theme": "Greenery Focus",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 2,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["plants"],
+      "preferWearablePools": ["outdoorsy"]
+    },
+    {
+      "week": 3,
+      "year": 2026,
+      "from": "09-21",
+      "to": "09-27",
+      "theme": "Cozy Reading Nook",
+      "isEventWeek": true,
+      "eventId": "cozy_reading_nook"
+    },
+    {
+      "week": 4,
+      "year": 2026,
+      "from": "09-28",
+      "to": "10-04",
+      "theme": "Modern Mix",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["modern"],
+      "preferWearablePools": ["fancy"]
+    },
+    {
+      "week": 5,
+      "year": 2026,
+      "from": "10-05",
+      "to": "10-11",
+      "theme": "Vintage Vibes",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 3,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["vintage"],
+      "preferWearablePools": ["basics"]
+    },
+    {
+      "week": 6,
+      "year": 2026,
+      "from": "10-12",
+      "to": "10-18",
+      "theme": "Cozy Transition",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 2,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["cozy"],
+      "preferWearablePools": ["cozy_wearables"]
+    },
+    {
+      "week": 7,
+      "year": 2026,
+      "from": "10-19",
+      "to": "10-25",
+      "theme": "Outdoor Living",
+      "isEventWeek": true,
+      "eventId": "outdoor_living"
+    },
+    {
+      "week": 8,
+      "year": 2026,
+      "from": "10-26",
+      "to": "11-01",
+      "theme": "Spooky Finale",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "seasonalWearables": ["wearable_witch_hat"]
+    },
+    {
+      "week": 9,
+      "year": 2026,
+      "from": "11-02",
+      "to": "11-08",
+      "theme": "Cozy Beginnings",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 3,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 2
+      },
+      "preferPools": ["cozy"],
+      "preferWearablePools": ["cozy_wearables"],
+      "isClothingCollectionWeek": true,
+      "clothingCollectionId": "cozy_collection"
+    },
+    {
+      "week": 10,
+      "year": 2026,
+      "from": "11-09",
+      "to": "11-15",
+      "theme": "Plants & Warmth",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 2,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["plants", "cozy"],
+      "preferWearablePools": ["cozy_wearables"]
+    },
+    {
+      "week": 11,
+      "year": 2026,
+      "from": "11-16",
+      "to": "11-22",
+      "theme": "Vintage Comfort",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["vintage", "cozy"],
+      "preferWearablePools": ["basics", "cozy_wearables"]
+    },
+    {
+      "week": 12,
+      "year": 2026,
+      "from": "11-23",
+      "to": "11-29",
+      "theme": "Gathering Week",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 3,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 0,
+        "surface": 2,
+        "wearable": 1
+      },
+      "preferPools": ["cozy", "core"],
+      "preferWearablePools": ["fancy"]
+    },
+    {
+      "week": 13,
+      "year": 2026,
+      "from": "11-30",
+      "to": "12-06",
+      "theme": "Winter Arrives",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 2,
+        "wall": 2,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["cozy"],
+      "preferWearablePools": ["cozy_wearables"]
+    },
+    {
+      "week": 14,
+      "year": 2026,
+      "from": "12-07",
+      "to": "12-13",
+      "theme": "Holiday Prep",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 3,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferWearablePools": ["cozy_wearables"],
+      "seasonalWearables": ["wearable_sweater_holiday"]
+    },
+    {
+      "week": 15,
+      "year": 2026,
+      "from": "12-14",
+      "to": "12-20",
+      "theme": "Festive Decor",
+      "guaranteed": {
+        "furniture": 1,
+        "decor": 3,
+        "wall": 2,
+        "rug": 0,
+        "outdoor": 1,
+        "surface": 2,
+        "wearable": 1
+      },
+      "preferWearablePools": ["cozy_wearables", "fancy"]
+    },
+    {
+      "week": 16,
+      "year": 2026,
+      "from": "12-21",
+      "to": "12-27",
+      "theme": "Winter Solstice",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["cozy", "core"],
+      "preferWearablePools": ["cozy_wearables"]
+    },
+    {
+      "week": 17,
+      "year": 2026,
+      "from": "12-28",
+      "to": "01-03",
+      "theme": "New Year Fresh Start",
+      "guaranteed": {
+        "furniture": 2,
+        "decor": 2,
+        "wall": 1,
+        "rug": 1,
+        "outdoor": 1,
+        "surface": 1,
+        "wearable": 1
+      },
+      "preferPools": ["modern", "plants"],
+      "preferWearablePools": ["fancy", "basics"]
+    }
+  ],
+  "starterKit": {
+    "items": ["rug_basic", "decor_plant_small", "wall_poster_simple"],
+    "trigger": "first_store_visit"
+  },
+  "mysteryBox": {
+    "baseCost": 75,
+    "seasonalAdditions": {
+      "autumn_2026": ["decor_pumpkin_small", "wall_autumn_wreath", "outdoor_hay_bale"],
+      "halloween_2026": ["decor_jack_o_lantern", "wall_bat_garland", "outdoor_ghost_sheet", "outdoor_tombstone"],
+      "cozy_november_2026": ["decor_blanket_knit", "decor_cocoa_station", "outdoor_fire_pit"],
+      "winter_holidays_2026": ["decor_string_lights", "decor_wreath_door", "outdoor_snowman", "surface_snow_globe"]
+    }
+  },
+  "refreshTimes": {
+    "weeklyRotation": "04:00",
+    "mysteryBox": "04:00"
+  }
+}

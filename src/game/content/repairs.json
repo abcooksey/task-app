@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "repairs": [
+    {
+      "id": "int_garbage",
+      "view": "interior",
+      "name": "Sweep up the garbage",
+      "blurb": "Clear out the mess so we can see the floor.",
+      "cost": 60,
+      "requires": [],
+      "order": 1,
+      "animationType": "sweep"
+    },
+    {
+      "id": "int_cobwebs",
+      "view": "interior",
+      "name": "Clear the cobwebs",
+      "blurb": "Brush away years of neglect.",
+      "cost": 60,
+      "requires": [],
+      "order": 2,
+      "animationType": "sweep"
+    },
+    {
+      "id": "int_floor",
+      "view": "interior",
+      "name": "Patch the floorboards",
+      "blurb": "Fix the creaky, broken boards.",
+      "cost": 150,
+      "requires": ["int_garbage"],
+      "order": 3,
+      "animationType": "hammer"
+    },
+    {
+      "id": "int_window",
+      "view": "interior",
+      "name": "Replace the broken window",
+      "blurb": "Let the light back in.",
+      "cost": 150,
+      "requires": ["int_cobwebs"],
+      "order": 4,
+      "animationType": "swap"
+    },
+    {
+      "id": "int_ceiling",
+      "view": "interior",
+      "name": "Fix the ceiling leak",
+      "blurb": "Patch up the hole before it rains again.",
+      "cost": 150,
+      "requires": ["int_cobwebs"],
+      "order": 5,
+      "animationType": "hammer"
+    },
+    {
+      "id": "int_door",
+      "view": "interior",
+      "name": "Rehang the door",
+      "blurb": "A door that actually closes.",
+      "cost": 120,
+      "requires": ["int_floor"],
+      "order": 6,
+      "animationType": "hammer"
+    },
+    {
+      "id": "int_walls",
+      "view": "interior",
+      "name": "Patch and paint the walls",
+      "blurb": "Cover the cracks and add some color.",
+      "cost": 250,
+      "requires": ["int_window", "int_ceiling"],
+      "order": 7,
+      "animationType": "paint"
+    },
+    {
+      "id": "int_light",
+      "view": "interior",
+      "name": "Wire up a ceiling light",
+      "blurb": "Brighten up the place.",
+      "cost": 80,
+      "requires": ["int_ceiling"],
+      "order": 8,
+      "animationType": "sparkle"
+    },
+    {
+      "id": "ext_yard",
+      "view": "exterior",
+      "name": "Clear the yard debris",
+      "blurb": "Rake up the leaves and haul away the junk.",
+      "cost": 80,
+      "requires": [],
+      "order": 1,
+      "animationType": "sweep"
+    },
+    {
+      "id": "ext_mailbox",
+      "view": "exterior",
+      "name": "Stand the mailbox back up",
+      "blurb": "Straighten out the old mailbox.",
+      "cost": 40,
+      "requires": [],
+      "order": 2,
+      "animationType": "hammer"
+    },
+    {
+      "id": "ext_steps",
+      "view": "exterior",
+      "name": "Repair the porch steps",
+      "blurb": "No more wobbly stairs.",
+      "cost": 120,
+      "requires": ["ext_yard"],
+      "order": 3,
+      "animationType": "hammer"
+    },
+    {
+      "id": "ext_fence",
+      "view": "exterior",
+      "name": "Mend the fence",
+      "blurb": "Fix the broken pickets.",
+      "cost": 150,
+      "requires": ["ext_yard"],
+      "order": 4,
+      "animationType": "hammer"
+    },
+    {
+      "id": "ext_roof",
+      "view": "exterior",
+      "name": "Replace the missing tiles",
+      "blurb": "Keep the weather outside where it belongs.",
+      "cost": 200,
+      "requires": ["ext_steps"],
+      "order": 5,
+      "animationType": "hammer"
+    },
+    {
+      "id": "ext_paint",
+      "view": "exterior",
+      "name": "Paint the outside",
+      "blurb": "A fresh coat makes all the difference.",
+      "cost": 250,
+      "requires": ["ext_roof", "ext_fence"],
+      "order": 6,
+      "animationType": "paint"
+    },
+    {
+      "id": "ext_path",
+      "view": "exterior",
+      "name": "Lay a stone path",
+      "blurb": "A proper walkway to the front door.",
+      "cost": 140,
+      "requires": ["ext_fence"],
+      "order": 7,
+      "animationType": "swap"
+    }
+  ]
+}

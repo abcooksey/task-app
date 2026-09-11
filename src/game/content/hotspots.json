@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "hotspots": {
+    "int_garbage": {
+      "x": 180,
+      "y": 520,
+      "width": 80,
+      "height": 60,
+      "label": "Garbage"
+    },
+    "int_cobwebs": {
+      "x": 280,
+      "y": 120,
+      "width": 60,
+      "height": 50,
+      "label": "Cobwebs"
+    },
+    "int_floor": {
+      "x": 180,
+      "y": 580,
+      "width": 120,
+      "height": 40,
+      "label": "Floor"
+    },
+    "int_window": {
+      "x": 280,
+      "y": 220,
+      "width": 60,
+      "height": 80,
+      "label": "Window"
+    },
+    "int_ceiling": {
+      "x": 180,
+      "y": 80,
+      "width": 100,
+      "height": 50,
+      "label": "Ceiling"
+    },
+    "int_door": {
+      "x": 80,
+      "y": 380,
+      "width": 50,
+      "height": 100,
+      "label": "Door"
+    },
+    "int_walls": {
+      "x": 80,
+      "y": 200,
+      "width": 60,
+      "height": 120,
+      "label": "Walls"
+    },
+    "int_light": {
+      "x": 180,
+      "y": 140,
+      "width": 50,
+      "height": 50,
+      "label": "Light"
+    },
+    "ext_yard": {
+      "x": 180,
+      "y": 560,
+      "width": 140,
+      "height": 60,
+      "label": "Yard"
+    },
+    "ext_mailbox": {
+      "x": 300,
+      "y": 480,
+      "width": 40,
+      "height": 60,
+      "label": "Mailbox"
+    },
+    "ext_steps": {
+      "x": 180,
+      "y": 480,
+      "width": 80,
+      "height": 50,
+      "label": "Steps"
+    },
+    "ext_fence": {
+      "x": 60,
+      "y": 450,
+      "width": 60,
+      "height": 80,
+      "label": "Fence"
+    },
+    "ext_roof": {
+      "x": 180,
+      "y": 100,
+      "width": 120,
+      "height": 60,
+      "label": "Roof"
+    },
+    "ext_paint": {
+      "x": 180,
+      "y": 280,
+      "width": 100,
+      "height": 120,
+      "label": "Paint"
+    },
+    "ext_path": {
+      "x": 180,
+      "y": 520,
+      "width": 60,
+      "height": 30,
+      "label": "Path"
+    }
+  }
+}

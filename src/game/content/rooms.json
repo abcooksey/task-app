@@ -1,0 +1,96 @@
+{
+  "gridSize": 16,
+  "defaultRoom": "main",
+  "rooms": {
+    "main": {
+      "id": "main",
+      "name": "Your Homestead",
+      "canvasSize": {
+        "width": 320,
+        "height": 320
+      },
+      "regions": {
+        "floor": {
+          "id": "floor",
+          "name": "Floor",
+          "x": 32,
+          "y": 128,
+          "width": 256,
+          "height": 160,
+          "gridWidth": 16,
+          "gridHeight": 10,
+          "allowedCategories": ["furniture", "decor", "rug"],
+          "description": "Main living area floor space"
+        },
+        "wall": {
+          "id": "wall",
+          "name": "Wall",
+          "x": 32,
+          "y": 32,
+          "width": 256,
+          "height": 96,
+          "gridWidth": 16,
+          "gridHeight": 6,
+          "allowedCategories": ["wall_decor"],
+          "description": "Back wall for hanging items"
+        },
+        "yard": {
+          "id": "yard",
+          "name": "Yard",
+          "x": 32,
+          "y": 288,
+          "width": 256,
+          "height": 32,
+          "gridWidth": 16,
+          "gridHeight": 2,
+          "allowedCategories": ["outdoor"],
+          "description": "Outdoor area in front of house"
+        }
+      },
+      "avatarAnchor": {
+        "x": 160,
+        "y": 240,
+        "facing": "down"
+      },
+      "finishes": {
+        "wall": {
+          "region": "wall",
+          "defaultFinish": "wall_finish_white"
+        },
+        "floor": {
+          "region": "floor",
+          "defaultFinish": "floor_finish_wood_light"
+        }
+      },
+      "depthConfig": {
+        "baseDepth": 100,
+        "sortByBottomEdge": true,
+        "wallDepthOffset": -50
+      }
+    }
+  },
+  "finishDefaults": {
+    "wall": "wall_finish_white",
+    "floor": "floor_finish_wood_light"
+  },
+  "placementRules": {
+    "overlapAllowed": {
+      "rug": ["furniture", "decor"],
+      "furniture": [],
+      "decor": [],
+      "wall_decor": [],
+      "outdoor": [],
+      "surface_decor": []
+    },
+    "surfaceSlotRequired": ["surface_decor"],
+    "finishCategories": ["wall_finish", "floor_finish"]
+  },
+  "validationMessages": {
+    "out_of_region": "This item doesn't fit in the selected area",
+    "overlaps": "This space is already occupied",
+    "wrong_region": "This item can't be placed here",
+    "no_free_slot": "No surface space available",
+    "slot_occupied": "This spot is already taken",
+    "not_placeable": "This item cannot be placed"
+  }
+}
