@@ -64,7 +64,7 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   decor_pumpkin_large: { source: graveyardPreviews, file: 'pumpkin-tall.png' },
   decor_jack_o_lantern: { source: graveyardPreviews, file: 'pumpkin-carved.png' },
   decor_candelabra: { source: graveyardPreviews, file: 'candle-multiple.png' },
-  decor_blanket_knit: { source: furnitureIsometric, file: 'rugDoormat_SE.png' }, // placeholder - cozy blanket
+  decor_blanket_knit: { source: furnitureIsometric, file: 'pillowBlueLong_SE.png' }, // cozy blanket/throw
   decor_string_lights: { source: holidayPreviews, file: 'lights-colored.png' },
   decor_tree_holiday: { source: holidayPreviews, file: 'tree-decorated.png' },
   decor_wreath_door: { source: holidayPreviews, file: 'wreath-decorated.png' },
@@ -156,7 +156,7 @@ const assetMapping: Record<string, { source: string; file: string }> = {
 
   // ============ NEW COZY POOL ITEMS (5) ============
   furniture_sofa_cozy: { source: furnitureIsometric, file: 'loungeDesignSofaCorner_SE.png' },
-  decor_cushion_set: { source: furnitureIsometric, file: 'cardboardBoxOpen_SE.png' }, // placeholder
+  decor_cushion_set: { source: furnitureIsometric, file: 'pillowBlue_SE.png' }, // cushion set
   decor_lamp_warm: { source: furnitureIsometric, file: 'lampSquareFloor_SE.png' },
   rug_soft_square: { source: furnitureIsometric, file: 'rugSquare_SE.png' },
   surface_candle_set: { source: graveyardPreviews, file: 'candle-multiple.png' },
@@ -185,6 +185,36 @@ const assetMapping: Record<string, { source: string; file: string }> = {
 
   // ============ NEW OUTDOOR ITEM (1) ============
   outdoor_lights_path: { source: graveyardPreviews, file: 'lightpost-single.png' },
+
+  // ============ ADDITIONAL COZY ITEMS ============
+  // Teddy bear - perfect cozy item
+  decor_teddy_bear: { source: furnitureIsometric, file: 'bear_SE.png' },
+  // Ottoman/footrest
+  furniture_ottoman: { source: furnitureIsometric, file: 'loungeSofaOttoman_SE.png' },
+  // Vintage radio
+  decor_radio_vintage: { source: furnitureIsometric, file: 'radio_SE.png' },
+  // Vintage TV
+  furniture_tv_vintage: { source: furnitureIsometric, file: 'televisionVintage_SE.png' },
+  // Cushioned bench
+  furniture_bench_cushion: { source: furnitureIsometric, file: 'benchCushion_SE.png' },
+  // Coat rack
+  decor_coat_rack: { source: furnitureIsometric, file: 'coatRackStanding_SE.png' },
+  // Kitchen items
+  surface_toaster: { source: furnitureIsometric, file: 'toaster_SE.png' },
+  surface_blender: { source: furnitureIsometric, file: 'kitchenBlender_SE.png' },
+  furniture_mini_fridge: { source: furnitureIsometric, file: 'kitchenFridgeSmall_SE.png' },
+  furniture_microwave: { source: furnitureIsometric, file: 'kitchenMicrowave_SE.png' },
+  // Laptop
+  surface_laptop: { source: furnitureIsometric, file: 'laptop_SE.png' },
+  // Speakers
+  decor_speaker: { source: furnitureIsometric, file: 'speaker_SE.png' },
+  // Ceiling fan (for later)
+  decor_ceiling_fan: { source: furnitureIsometric, file: 'ceilingFan_SE.png' },
+  // Glass coffee table
+  furniture_table_coffee_glass: { source: furnitureIsometric, file: 'tableCoffeeGlass_SE.png' },
+  // Pillows (for cozy vibes)
+  decor_pillow: { source: furnitureIsometric, file: 'pillow_SE.png' },
+  decor_pillow_long: { source: furnitureIsometric, file: 'pillowLong_SE.png' },
 }
 
 // Track statistics
