@@ -25,6 +25,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   furniture: 'Furniture',
   decor: 'Decor',
   rug: 'Rug',
+  wall: 'Wall Art',
   wall_decor: 'Wall Art',
   surface_decor: 'Surface Item',
   outdoor: 'Outdoor',
@@ -65,11 +66,12 @@ export default function ItemDetailSheet({
         <div className="flex-1 overflow-y-auto px-6 pb-6">
           {/* Header with sprite */}
           <div className="flex items-start gap-4 mb-4">
-            <div
-              className="w-20 h-20 rounded-xl flex items-center justify-center text-white text-sm font-medium flex-shrink-0"
-              style={{ backgroundColor: getCategoryColor(item.category) }}
-            >
-              {item.footprint_w}×{item.footprint_h}
+            <div className="w-24 h-24 rounded-xl flex items-center justify-center bg-gray-50 dark:bg-gray-700/50 flex-shrink-0">
+              <img
+                src={getSpritePath(item.category, item.texture_key)}
+                alt={item.name}
+                className="max-w-full max-h-full object-contain"
+              />
             </div>
 
             <div className="flex-1 min-w-0">
@@ -196,16 +198,17 @@ export default function ItemDetailSheet({
   )
 }
 
-function getCategoryColor(category: string): string {
-  switch (category) {
-    case 'furniture': return '#8b5cf6'
-    case 'decor': return '#22c55e'
-    case 'rug': return '#f59e0b'
-    case 'wall_decor': return '#3b82f6'
-    case 'surface_decor': return '#ec4899'
-    case 'outdoor': return '#14b8a6'
-    case 'wall_finish': return '#6366f1'
-    case 'floor_finish': return '#78716c'
-    default: return '#6b7280'
+function getSpritePath(category: string, textureKey: string): string {
+  const folderMap: Record<string, string> = {
+    furniture: 'furniture',
+    decor: 'decor',
+    rug: 'rug',
+    wall: 'wall',
+    surface_decor: 'surface_decor',
+    outdoor: 'outdoor',
+    wall_finish: 'wall_finish',
+    floor_finish: 'floor_finish',
   }
+  const folder = folderMap[category] || category
+  return `/assets/sprites/${folder}/${textureKey}.png`
 }

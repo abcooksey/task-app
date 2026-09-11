@@ -21,11 +21,11 @@ CREATE TABLE catalog_items (
   name            TEXT NOT NULL,
   blurb           TEXT,
   category        TEXT NOT NULL CHECK (category IN (
-    'furniture', 'decor', 'rug', 'wall_decor', 'surface_decor', 'outdoor',
+    'furniture', 'decor', 'rug', 'wall', 'surface_decor', 'outdoor',
     'wall_finish', 'floor_finish',
     'clothing_top', 'clothing_bottom', 'clothing_shoes', 'hair', 'accessory'
   )),
-  price           INTEGER NOT NULL CHECK (price > 0),
+  price           INTEGER NOT NULL CHECK (price >= 0),
   placement       TEXT NOT NULL CHECK (placement IN (
     'floor', 'rug', 'wall', 'surface', 'outdoor', 'wall_finish', 'floor_finish', 'wearable'
   )),
