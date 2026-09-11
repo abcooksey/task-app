@@ -139,14 +139,12 @@ Avatar sprites are currently generated as simple shape placeholders. When real L
 | Starter Bottoms | 3 colors × 2 poses | 6 |
 | Starter Shoes | 2 colors × 2 poses | 4 |
 
-### Phase 4 Wearables - Future (LPC Attribution)
-When LPC sprites are imported, they will be credited here:
+### Phase 4 Wearables Placeholders (Generated)
+- **Source**: Generated via `scripts/build-avatar-atlas.ts`
+- **License**: CC0 1.0 (Public Domain) - Original work by Homestead
+- **Author**: Homestead
 
-- **Source**: [Liberated Pixel Cup](https://lpc.opengameart.org/)
-- **License**: CC-BY-SA 3.0 / GPL 3.0 (dual-licensed)
-- **Authors**: Various contributors (see `LICENSES/LPC-CREDITS.txt`)
-
-**Planned wearables (54 items):**
+**Generated wearables (54 items):**
 
 | Category | Assets |
 |----------|--------|
@@ -158,6 +156,13 @@ When LPC sprites are imported, they will be credited here:
 | Bottoms | bottom_jeans_dark, bottom_shorts, bottom_skirt_mini, bottom_skirt_long, bottom_joggers, bottom_leggings, bottom_cargo, bottom_overalls |
 | Shoes | shoes_boots_ankle, shoes_sandals, shoes_loafers, shoes_boots_hiking, shoes_slippers, shoes_heels |
 | Accessories | acc_glasses_round, acc_glasses_square, acc_sunglasses, acc_beanie, acc_cap, acc_scarf, acc_earrings, acc_headband, acc_witch_hat, acc_bunny_ears, acc_flower_crown |
+
+### Future: LPC Sprite Upgrade
+When real LPC (Liberated Pixel Cup) sprites are imported, they will be credited here:
+
+- **Source**: [Liberated Pixel Cup](https://lpc.opengameart.org/)
+- **License**: CC-BY-SA 3.0 / GPL 3.0 (dual-licensed)
+- **Authors**: Various contributors (see `LICENSES/LPC-CREDITS.txt`)
 
 ---
 

@@ -36,7 +36,7 @@
         "surface_potion_bottles"
       ],
       "wearables": [
-        "wearable_witch_hat"
+        "acc_witch_hat"
       ]
     },
     {
@@ -72,7 +72,7 @@
         "surface_gingerbread"
       ],
       "wearables": [
-        "wearable_sweater_holiday"
+        "top_sweater_holiday"
       ]
     },
     {
@@ -82,8 +82,8 @@
       "to": "04-30",
       "items": [],
       "wearables": [
-        "wearable_bunny_ears",
-        "wearable_flower_crown"
+        "acc_bunny_ears",
+        "acc_flower_crown"
       ]
     }
   ],
@@ -247,9 +247,9 @@
         "bottom_joggers",
         "shoes_boots_ankle",
         "shoes_loafers",
-        "accessory_glasses_round",
-        "accessory_beanie",
-        "accessory_cap"
+        "acc_glasses_round",
+        "acc_beanie",
+        "acc_cap"
       ]
     },
     "fancy": {
@@ -265,10 +265,10 @@
         "bottom_skirt_long",
         "shoes_sandals",
         "shoes_heels",
-        "accessory_glasses_square",
-        "accessory_sunglasses",
-        "accessory_earrings",
-        "accessory_headband"
+        "acc_glasses_square",
+        "acc_sunglasses",
+        "acc_earrings",
+        "acc_headband"
       ]
     },
     "outdoorsy": {
@@ -284,7 +284,7 @@
         "bottom_overalls",
         "shoes_boots_hiking",
         "shoes_slippers",
-        "accessory_scarf"
+        "acc_scarf"
       ]
     },
     "cozy_wearables": {
@@ -297,8 +297,8 @@
         "bottom_joggers",
         "bottom_leggings",
         "shoes_slippers",
-        "accessory_beanie",
-        "accessory_scarf"
+        "acc_beanie",
+        "acc_scarf"
       ]
     }
   },
@@ -314,9 +314,9 @@
       "description": "Warm knits and cozy layers",
       "items": [
         "top_sweater_cozy",
-        "accessory_scarf",
+        "acc_scarf",
         "shoes_slippers",
-        "accessory_beanie"
+        "acc_beanie"
       ]
     },
     {
@@ -332,7 +332,7 @@
         "top_blouse_floral",
         "top_cardigan",
         "shoes_sandals",
-        "accessory_headband"
+        "acc_headband"
       ]
     },
     {
@@ -348,7 +348,7 @@
         "top_tank",
         "top_crop",
         "bottom_shorts",
-        "accessory_sunglasses"
+        "acc_sunglasses"
       ]
     },
     {
@@ -364,7 +364,7 @@
         "top_jacket_denim",
         "bottom_jeans_dark",
         "shoes_loafers",
-        "accessory_glasses_round"
+        "acc_glasses_round"
       ]
     }
   ],
@@ -491,7 +491,7 @@
         "surface": 1,
         "wearable": 1
       },
-      "seasonalWearables": ["wearable_witch_hat"]
+      "seasonalWearables": ["acc_witch_hat"]
     },
     {
       "week": 9,
@@ -601,7 +601,7 @@
         "wearable": 1
       },
       "preferWearablePools": ["cozy_wearables"],
-      "seasonalWearables": ["wearable_sweater_holiday"]
+      "seasonalWearables": ["top_sweater_holiday"]
     },
     {
       "week": 15,
