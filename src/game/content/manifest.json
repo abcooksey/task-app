@@ -352,6 +352,34 @@
       "height": 96,
       "description": "Furniture item: furniture cabinet bathroom drawer"
     },
+    "furniture_cabinet_kitchen": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_kitchen.png",
+      "width": 92,
+      "height": 109,
+      "description": "Furniture item: furniture cabinet kitchen"
+    },
+    "furniture_cabinet_kitchen_drawer": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_kitchen_drawer.png",
+      "width": 92,
+      "height": 109,
+      "description": "Furniture item: furniture cabinet kitchen drawer"
+    },
+    "furniture_cabinet_upper": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_upper.png",
+      "width": 67,
+      "height": 88,
+      "description": "Furniture item: furniture cabinet upper"
+    },
+    "furniture_cabinet_upper_double": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_upper_double.png",
+      "width": 67,
+      "height": 88,
+      "description": "Furniture item: furniture cabinet upper double"
+    },
     "furniture_chair_dining": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_chair_dining.png",
@@ -415,6 +443,27 @@
       "height": 62,
       "description": "Furniture item: furniture dresser vintage"
     },
+    "furniture_fridge": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_fridge.png",
+      "width": 72,
+      "height": 146,
+      "description": "Furniture item: furniture fridge"
+    },
+    "furniture_fridge_large": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_fridge_large.png",
+      "width": 91,
+      "height": 158,
+      "description": "Furniture item: furniture fridge large"
+    },
+    "furniture_kitchen_bar": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_kitchen_bar.png",
+      "width": 67,
+      "height": 88,
+      "description": "Furniture item: furniture kitchen bar"
+    },
     "furniture_microwave": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_microwave.png",
@@ -450,6 +499,13 @@
       "height": 95,
       "description": "Furniture item: furniture plant stand"
     },
+    "furniture_range_hood": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_range_hood.png",
+      "width": 75,
+      "height": 83,
+      "description": "Furniture item: furniture range hood"
+    },
     "furniture_reading_chair": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_reading_chair.png",
@@ -477,6 +533,13 @@
       "width": 58,
       "height": 81,
       "description": "Furniture item: furniture sink bathroom"
+    },
+    "furniture_sink_kitchen": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sink_kitchen.png",
+      "width": 92,
+      "height": 109,
+      "description": "Furniture item: furniture sink kitchen"
     },
     "furniture_sink_square": {
       "type": "image",
@@ -526,6 +589,20 @@
       "width": 38,
       "height": 67,
       "description": "Furniture item: furniture stool"
+    },
+    "furniture_stove": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_stove.png",
+      "width": 92,
+      "height": 109,
+      "description": "Furniture item: furniture stove"
+    },
+    "furniture_stove_electric": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_stove_electric.png",
+      "width": 92,
+      "height": 109,
+      "description": "Furniture item: furniture stove electric"
     },
     "furniture_table_coffee": {
       "type": "image",

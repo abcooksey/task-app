@@ -225,6 +225,19 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   furniture_cabinet_bathroom: { source: furnitureIsometric, file: 'bathroomCabinet_SE.png' },
   furniture_cabinet_bathroom_drawer: { source: furnitureIsometric, file: 'bathroomCabinetDrawer_SE.png' },
   furniture_toilet: { source: furnitureIsometric, file: 'toilet_SE.png' },
+
+  // ============ KITCHEN SET (11) ============
+  furniture_cabinet_kitchen: { source: furnitureIsometric, file: 'kitchenCabinet_SE.png' },
+  furniture_cabinet_kitchen_drawer: { source: furnitureIsometric, file: 'kitchenCabinetDrawer_SE.png' },
+  furniture_cabinet_upper: { source: furnitureIsometric, file: 'kitchenCabinetUpper_SE.png' },
+  furniture_cabinet_upper_double: { source: furnitureIsometric, file: 'kitchenCabinetUpperDouble_SE.png' },
+  furniture_sink_kitchen: { source: furnitureIsometric, file: 'kitchenSink_SE.png' },
+  furniture_stove: { source: furnitureIsometric, file: 'kitchenStove_SE.png' },
+  furniture_stove_electric: { source: furnitureIsometric, file: 'kitchenStoveElectric_SE.png' },
+  furniture_fridge: { source: furnitureIsometric, file: 'kitchenFridge_SE.png' },
+  furniture_fridge_large: { source: furnitureIsometric, file: 'kitchenFridgeLarge_SE.png' },
+  furniture_kitchen_bar: { source: furnitureIsometric, file: 'kitchenBar_SE.png' },
+  furniture_range_hood: { source: furnitureIsometric, file: 'hoodModern_SE.png' },
 }
 
 // Track statistics
