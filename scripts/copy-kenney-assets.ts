@@ -265,6 +265,18 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   decor_speaker_small: { source: furnitureIsometric, file: 'speakerSmall_SE.png' },
   rug_doormat: { source: furnitureIsometric, file: 'rugDoormat_SE.png' },
   surface_computer_mouse: { source: furnitureIsometric, file: 'computerMouse_SE.png' },
+
+  // ============ HOLIDAY EXTRAS (10) ============
+  decor_nutcracker: { source: holidayPreviews, file: 'nutcracker.png' },
+  decor_reindeer: { source: holidayPreviews, file: 'reindeer.png' },
+  decor_sled: { source: holidayPreviews, file: 'sled.png' },
+  decor_present_cube: { source: holidayPreviews, file: 'present-a-cube.png' },
+  decor_present_rectangle: { source: holidayPreviews, file: 'present-b-rectangle.png' },
+  decor_train_locomotive: { source: holidayPreviews, file: 'train-locomotive.png' },
+  decor_train_wagon: { source: holidayPreviews, file: 'train-wagon.png' },
+  decor_menorah: { source: holidayPreviews, file: 'hanukkah-menorah-candles.png' },
+  decor_kinara: { source: holidayPreviews, file: 'kwanzaa-kinara.png' },
+  decor_lantern_hanging: { source: holidayPreviews, file: 'lantern-hanging.png' },
 }
 
 // Track statistics

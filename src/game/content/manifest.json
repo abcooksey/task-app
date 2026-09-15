@@ -58,6 +58,13 @@
       "height": 64,
       "description": "Decorative item: decor jack o lantern"
     },
+    "decor_kinara": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_kinara.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor kinara"
+    },
     "decor_lamp_antique": {
       "type": "image",
       "path": "/assets/sprites/decor/decor_lamp_antique.png",
@@ -99,6 +106,27 @@
       "width": 24,
       "height": 108,
       "description": "Decorative item: decor lamp warm"
+    },
+    "decor_lantern_hanging": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_lantern_hanging.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor lantern hanging"
+    },
+    "decor_menorah": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_menorah.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor menorah"
+    },
+    "decor_nutcracker": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_nutcracker.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor nutcracker"
     },
     "decor_pillow": {
       "type": "image",
@@ -170,6 +198,20 @@
       "height": 18,
       "description": "Decorative item: decor plant succulent"
     },
+    "decor_present_cube": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_present_cube.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor present cube"
+    },
+    "decor_present_rectangle": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_present_rectangle.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor present rectangle"
+    },
     "decor_pumpkin_large": {
       "type": "image",
       "path": "/assets/sprites/decor/decor_pumpkin_large.png",
@@ -190,6 +232,20 @@
       "width": 41,
       "height": 50,
       "description": "Decorative item: decor radio vintage"
+    },
+    "decor_reindeer": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_reindeer.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor reindeer"
+    },
+    "decor_sled": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_sled.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor sled"
     },
     "decor_speaker": {
       "type": "image",
@@ -218,6 +274,20 @@
       "width": 51,
       "height": 55,
       "description": "Decorative item: decor teddy bear"
+    },
+    "decor_train_locomotive": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_train_locomotive.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor train locomotive"
+    },
+    "decor_train_wagon": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_train_wagon.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor train wagon"
     },
     "decor_trashcan": {
       "type": "image",
