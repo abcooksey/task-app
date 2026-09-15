@@ -310,6 +310,13 @@
       "height": 93,
       "description": "Furniture item: furniture bench cushion"
     },
+    "furniture_bench_low": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bench_low.png",
+      "width": 67,
+      "height": 67,
+      "description": "Furniture item: furniture bench low"
+    },
     "furniture_bookshelf_antique": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_bookshelf_antique.png",
@@ -380,6 +387,27 @@
       "height": 88,
       "description": "Furniture item: furniture cabinet upper double"
     },
+    "furniture_chair_accent": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_accent.png",
+      "width": 116,
+      "height": 114,
+      "description": "Furniture item: furniture chair accent"
+    },
+    "furniture_chair_cushion": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_cushion.png",
+      "width": 42,
+      "height": 78,
+      "description": "Furniture item: furniture chair cushion"
+    },
+    "furniture_chair_desk": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_desk.png",
+      "width": 60,
+      "height": 97,
+      "description": "Furniture item: furniture chair desk"
+    },
     "furniture_chair_dining": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_chair_dining.png",
@@ -393,6 +421,13 @@
       "width": 105,
       "height": 133,
       "description": "Furniture item: furniture chair modern"
+    },
+    "furniture_chair_rounded": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_chair_rounded.png",
+      "width": 42,
+      "height": 72,
+      "description": "Furniture item: furniture chair rounded"
     },
     "furniture_chair_wooden": {
       "type": "image",
@@ -589,6 +624,13 @@
       "width": 38,
       "height": 67,
       "description": "Furniture item: furniture stool"
+    },
+    "furniture_stool_square": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_stool_square.png",
+      "width": 31,
+      "height": 63,
+      "description": "Furniture item: furniture stool square"
     },
     "furniture_stove": {
       "type": "image",

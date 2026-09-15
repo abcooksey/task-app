@@ -238,6 +238,14 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   furniture_fridge_large: { source: furnitureIsometric, file: 'kitchenFridgeLarge_SE.png' },
   furniture_kitchen_bar: { source: furnitureIsometric, file: 'kitchenBar_SE.png' },
   furniture_range_hood: { source: furnitureIsometric, file: 'hoodModern_SE.png' },
+
+  // ============ MORE SEATING (6) ============
+  furniture_chair_cushion: { source: furnitureIsometric, file: 'chairCushion_SE.png' },
+  furniture_chair_rounded: { source: furnitureIsometric, file: 'chairRounded_SE.png' },
+  furniture_chair_desk: { source: furnitureIsometric, file: 'chairDesk_SE.png' },
+  furniture_chair_accent: { source: furnitureIsometric, file: 'loungeDesignChair_SE.png' },
+  furniture_bench_low: { source: furnitureIsometric, file: 'benchCushionLow_SE.png' },
+  furniture_stool_square: { source: furnitureIsometric, file: 'stoolBarSquare_SE.png' },
 }
 
 // Track statistics
