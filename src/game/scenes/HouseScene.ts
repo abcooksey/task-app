@@ -7,6 +7,7 @@ import hotspotsData from '../content/hotspots.json'
 import repairsData from '../content/repairs.json'
 import roomsData from '../content/rooms.json'
 import manifestData from '../content/manifest.json'
+import catalogData from '../content/catalog.json'
 
 interface ManifestAsset {
   type: 'image'
@@ -59,6 +60,13 @@ interface PlacedItemSprite {
   footprint: { w: number; h: number }
 }
 
+interface CatalogItemData {
+  id: string
+  footprint: { w: number; h: number }
+  placement: string
+  category: string
+}
+
 // Animation durations
 const ANIM_DURATION = {
   sweep: 1500,
@@ -77,6 +85,76 @@ const ANIM_COLORS = {
   swap: 0x10b981,     // Green for swap
 }
 
+// Room box geometry for 360x640 canvas (correct 3D box perspective)
+// The room fills most of the canvas - minimal blank space above/below
+const ROOM_GEOMETRY = {
+  // Front opening (viewer's perspective - full width, minimal margins)
+  front: {
+    top: 50,        // Ceiling starts here (small margin above)
+    bottom: 620,    // Floor ends here (small margin below)
+    left: 0,        // Full width left edge
+    right: 360,     // Full width right edge
+  },
+  // Back wall (inset rectangle - where the wall actually is)
+  backWall: {
+    top: 120,       // Top of back wall (ceiling depth = 70px)
+    bottom: 380,    // Bottom of back wall (floor depth = 240px)
+    left: 60,       // Inset from left (side wall width at back)
+    right: 300,     // Inset from right
+  },
+  // Floor grid configuration
+  floorGrid: {
+    cols: 8,
+    rows: 6,
+  },
+}
+
+// Interior palette - Animal Crossing style (warm, cozy, well-lit)
+const INTERIOR_COLORS = {
+  // Background (outside the room box)
+  background: 0x1a1a2e,      // Dark purple-gray
+
+  // Walls - warm cream tones with depth
+  wallBase: 0xF5EBE0,        // Warm cream (back wall - brightest)
+  wallCeiling: 0xEDE4D8,     // Slightly darker (ceiling)
+  wallLeft: 0xE0D4C6,        // Medium shadow (left wall)
+  wallRight: 0xD4C8BA,       // Darker shadow (right wall)
+
+  // Floor - rich warm wood
+  floorWood: 0xC4956A,       // Main wood color
+  floorWoodLight: 0xD4A87A,  // Wood highlight
+  floorWoodDark: 0x9B7550,   // Wood shadow/grain
+
+  // Trim and accents
+  baseboard: 0x8B6B4A,       // Warm brown trim
+  cornerLine: 0x6B5040,      // Dark corner accent
+
+  // Window
+  windowFrame: 0x6B5343,     // Dark wood frame
+  windowGlass: 0xB8E4F0,     // Bright sky blue
+  windowReflect: 0xFFFFFF,   // White highlight
+
+  // Door
+  doorWood: 0x8B6B4A,        // Door matches trim
+  doorPanels: 0x7A5A3A,      // Slightly darker panels
+  doorKnob: 0xD4A84B,        // Brass
+}
+
+// Exterior palette
+const EXTERIOR_COLORS = {
+  skyTop: 0x87CEEB,        // Light sky blue
+  skyBottom: 0xE0F0FF,     // Pale blue horizon
+  houseSiding: 0xE8DFD4,   // Cream house
+  houseShadow: 0xD4C8B8,   // Shadow
+  roofShingles: 0x6B5B4F,  // Brown roof
+  roofShadow: 0x4A3F36,    // Darker roof
+  grass: 0x7CB342,         // Vibrant green
+  grassDark: 0x5D8A28,     // Grass shadow
+  pathStone: 0xC9B99A,     // Tan path
+  fenceWood: 0xA89070,     // Fence
+  bushGreen: 0x4A7C4E,     // Shrubs
+}
+
 /**
  * Main house scene - renders interior or exterior view
  *
@@ -89,6 +167,7 @@ export class HouseScene extends Phaser.Scene {
   private reducedMotion = false
   private background: Phaser.GameObjects.Rectangle | null = null
   private viewLabel: Phaser.GameObjects.Text | null = null
+  private roomGraphics: Phaser.GameObjects.Graphics | null = null
   private hotspots: Map<string, HotspotSprite> = new Map()
   private hotspotsContainer: Phaser.GameObjects.Container | null = null
   private effectsContainer: Phaser.GameObjects.Container | null = null
@@ -124,8 +203,8 @@ export class HouseScene extends Phaser.Scene {
   // Drag state
   private draggingPlacement: PlacedItemSprite | null = null
 
-  // Grid size
-  private readonly GRID_SIZE = 16
+  // Grid size (matches rooms.json gridSize)
+  private readonly GRID_SIZE = 32
 
   // Avatar state (Phase 4)
   private avatarSprite: AvatarSprite | null = null
@@ -135,8 +214,16 @@ export class HouseScene extends Phaser.Scene {
   private avatarVisible = true
   private catalogItems: Map<string, CatalogItemForComposer> = new Map()
 
+  // Catalog lookup for item footprints
+  private itemCatalog: Map<string, CatalogItemData> = new Map()
+
   constructor() {
     super({ key: 'HouseScene' })
+
+    // Build item catalog lookup
+    for (const item of (catalogData as { items: CatalogItemData[] }).items) {
+      this.itemCatalog.set(item.id, item)
+    }
   }
 
   preload(): void {
@@ -158,8 +245,13 @@ export class HouseScene extends Phaser.Scene {
       this.repairConfigs.set(repair.id, repair as RepairConfig)
     }
 
+    // Create graphics object for room rendering (below hotspots)
+    this.roomGraphics = this.add.graphics()
+    this.roomGraphics.setDepth(1)
+
     // Create container for hotspots
     this.hotspotsContainer = this.add.container(0, 0)
+    this.hotspotsContainer.setDepth(50)
 
     // Create container for effects (on top)
     this.effectsContainer = this.add.container(0, 0)
@@ -199,10 +291,11 @@ export class HouseScene extends Phaser.Scene {
       this.highlightHotspot(repairId)
     })
 
-    // Decorate mode commands
+    // Placement commands (work in both normal and decorate modes)
     bridge.on('setPlacements', ({ placements }) => {
       this.placements = placements
-      if (this.decorateMode) {
+      // Render if containers exist (they're created in both renderScene and renderDecorateMode)
+      if (this.furnitureContainer) {
         this.renderPlacements()
       }
     })
@@ -278,48 +371,554 @@ export class HouseScene extends Phaser.Scene {
   }
 
   /**
-   * Render the current view (placeholder version)
+   * Render the current view
    */
   private renderScene(): void {
     // Clear existing background
     if (this.background) {
       this.background.destroy()
+      this.background = null
     }
     if (this.viewLabel) {
       this.viewLabel.destroy()
+      this.viewLabel = null
     }
 
-    const { width, height } = this.scale
+    // Clear and render room graphics
+    if (this.roomGraphics) {
+      this.roomGraphics.clear()
 
-    // Placeholder background based on view
-    const bgColor = this.currentView === 'interior' ? 0x2d2d44 : 0x3d5a3d
-    this.background = this.add.rectangle(
-      width / 2,
-      height / 2,
-      width,
-      height,
-      bgColor
-    )
-
-    // View label (temporary, for development)
-    this.viewLabel = this.add.text(
-      width / 2,
-      height / 2 - 100,
-      this.currentView === 'interior' ? 'INTERIOR VIEW' : 'EXTERIOR VIEW',
-      {
-        fontSize: '20px',
-        color: '#666666',
-        fontFamily: 'system-ui, sans-serif',
+      if (this.currentView === 'interior') {
+        this.renderInteriorRoom()
+      } else {
+        this.renderExteriorView()
       }
-    )
-    this.viewLabel.setOrigin(0.5)
-    this.viewLabel.setAlpha(0.5)
+    }
 
     // Recreate hotspots for new view
     this.createHotspots()
 
+    // Create placement containers for normal mode (non-interactive display)
+    this.clearPlacementContainers()
+    this.createPlacementContainers()
+
+    // Render placed items (non-interactive in normal mode)
+    this.renderPlacements()
+
     // Update avatar for view change
     this.updateAvatar()
+  }
+
+  /**
+   * Clear placement containers
+   */
+  private clearPlacementContainers(): void {
+    this.placedItems.forEach(item => item.container.destroy())
+    this.placedItems.clear()
+
+    this.floorBaseContainer?.destroy()
+    this.rugContainer?.destroy()
+    this.furnitureContainer?.destroy()
+    this.wallBaseContainer?.destroy()
+    this.wallDecorContainer?.destroy()
+
+    this.floorBaseContainer = null
+    this.rugContainer = null
+    this.furnitureContainer = null
+    this.wallBaseContainer = null
+    this.wallDecorContainer = null
+  }
+
+  /**
+   * Create containers for placed items
+   */
+  private createPlacementContainers(): void {
+    this.floorBaseContainer = this.add.container(0, 0)
+    this.floorBaseContainer.setDepth(10)
+
+    this.rugContainer = this.add.container(0, 0)
+    this.rugContainer.setDepth(20)
+
+    this.furnitureContainer = this.add.container(0, 0)
+    this.furnitureContainer.setDepth(30)
+
+    this.wallBaseContainer = this.add.container(0, 0)
+    this.wallBaseContainer.setDepth(40)
+
+    this.wallDecorContainer = this.add.container(0, 0)
+    this.wallDecorContainer.setDepth(50)
+  }
+
+  /**
+   * Render interior room with correct 3D box perspective
+   *
+   * The room is a 3D BOX viewed from the front:
+   * - Blank space is ABOVE the ceiling and BELOW the floor (not on sides!)
+   * - The "front opening" spans the full width of the screen
+   * - The "back wall" is a smaller rectangle inset from the edges
+   * - CEILING connects front-top to back-wall-top (trapezoid)
+   * - FLOOR connects back-wall-bottom to front-bottom (trapezoid)
+   * - SIDE WALLS are narrow vertical faces connecting ceiling to floor
+   */
+  private renderInteriorRoom(): void {
+    const g = this.roomGraphics
+    if (!g) return
+
+    const { front, backWall } = ROOM_GEOMETRY
+
+    // === 1. BACK WALL (rectangle at back of room) ===
+    g.fillStyle(INTERIOR_COLORS.wallBase)
+    g.fillRect(
+      backWall.left,
+      backWall.top,
+      backWall.right - backWall.left,
+      backWall.bottom - backWall.top
+    )
+
+    // Subtle gradient effect on back wall (lighter at top)
+    g.fillStyle(0xFFFFFF, 0.08)
+    g.fillRect(
+      backWall.left,
+      backWall.top,
+      backWall.right - backWall.left,
+      (backWall.bottom - backWall.top) * 0.3
+    )
+
+    // === 2. CEILING (trapezoid: wide at front, narrow at back) ===
+    g.fillStyle(INTERIOR_COLORS.wallCeiling)
+    g.beginPath()
+    g.moveTo(front.left, front.top)         // Front-left (screen edge)
+    g.lineTo(front.right, front.top)        // Front-right (screen edge)
+    g.lineTo(backWall.right, backWall.top)  // Back-right (back wall)
+    g.lineTo(backWall.left, backWall.top)   // Back-left (back wall)
+    g.closePath()
+    g.fillPath()
+
+    // === 3. LEFT WALL (quadrilateral connecting ceiling to floor) ===
+    g.fillStyle(INTERIOR_COLORS.wallLeft)
+    g.beginPath()
+    g.moveTo(front.left, front.top)          // Top-front (ceiling)
+    g.lineTo(backWall.left, backWall.top)    // Top-back (back wall)
+    g.lineTo(backWall.left, backWall.bottom) // Bottom-back (back wall)
+    g.lineTo(front.left, front.bottom)       // Bottom-front (floor)
+    g.closePath()
+    g.fillPath()
+
+    // === 4. RIGHT WALL (quadrilateral connecting ceiling to floor) ===
+    g.fillStyle(INTERIOR_COLORS.wallRight)
+    g.beginPath()
+    g.moveTo(front.right, front.top)          // Top-front (ceiling)
+    g.lineTo(backWall.right, backWall.top)    // Top-back (back wall)
+    g.lineTo(backWall.right, backWall.bottom) // Bottom-back (back wall)
+    g.lineTo(front.right, front.bottom)       // Bottom-front (floor)
+    g.closePath()
+    g.fillPath()
+
+    // === 5. FLOOR (trapezoid: narrow at back, wide at front) ===
+    g.fillStyle(INTERIOR_COLORS.floorWood)
+    g.beginPath()
+    g.moveTo(backWall.left, backWall.bottom)  // Back-left
+    g.lineTo(backWall.right, backWall.bottom) // Back-right
+    g.lineTo(front.right, front.bottom)       // Front-right
+    g.lineTo(front.left, front.bottom)        // Front-left
+    g.closePath()
+    g.fillPath()
+
+    // === 6. FLOOR BOARD LINES (converging to vanishing point) ===
+    this.drawFloorBoards(g)
+
+    // === 7. SHADOW WHERE FLOOR MEETS BACK WALL ===
+    g.fillStyle(0x000000, 0.12)
+    g.beginPath()
+    g.moveTo(backWall.left, backWall.bottom - 4)
+    g.lineTo(backWall.right, backWall.bottom - 4)
+    g.lineTo(backWall.right, backWall.bottom + 3)
+    g.lineTo(backWall.left, backWall.bottom + 3)
+    g.closePath()
+    g.fillPath()
+
+    // === 8. BASEBOARD (trim line at wall/floor junction) ===
+    g.lineStyle(4, INTERIOR_COLORS.baseboard)
+    g.lineBetween(backWall.left, backWall.bottom, backWall.right, backWall.bottom)
+
+    // Side baseboard lines (along the perspective)
+    g.lineStyle(3, INTERIOR_COLORS.baseboard)
+    g.lineBetween(backWall.left, backWall.bottom, front.left, front.bottom)
+    g.lineBetween(backWall.right, backWall.bottom, front.right, front.bottom)
+
+    // === 9. CORNER DEPTH LINES (where walls meet) ===
+    g.lineStyle(2, INTERIOR_COLORS.cornerLine, 0.4)
+    // Vertical corners where side walls meet back wall
+    g.lineBetween(backWall.left, backWall.top, backWall.left, backWall.bottom)
+    g.lineBetween(backWall.right, backWall.top, backWall.right, backWall.bottom)
+
+    // Ceiling corners (where ceiling meets back wall)
+    g.lineStyle(1, INTERIOR_COLORS.cornerLine, 0.3)
+    g.lineBetween(front.left, front.top, backWall.left, backWall.top)
+    g.lineBetween(front.right, front.top, backWall.right, backWall.top)
+
+    // === 10. WINDOW (on the back wall) ===
+    const backWallWidth = backWall.right - backWall.left
+    const backWallHeight = backWall.bottom - backWall.top
+    const winW = Math.min(70, backWallWidth * 0.35)
+    const winH = Math.min(60, backWallHeight * 0.35)
+    const winX = backWall.left + backWallWidth * 0.68 - winW / 2
+    const winY = backWall.top + 25
+
+    // Window outer frame
+    g.fillStyle(INTERIOR_COLORS.windowFrame)
+    g.fillRect(winX - 5, winY - 5, winW + 10, winH + 10)
+
+    // Window glass
+    g.fillStyle(INTERIOR_COLORS.windowGlass)
+    g.fillRect(winX, winY, winW, winH)
+
+    // Window reflection highlight
+    g.fillStyle(INTERIOR_COLORS.windowReflect, 0.25)
+    g.fillRect(winX + 3, winY + 3, winW * 0.25, winH * 0.35)
+
+    // Window cross frame
+    g.lineStyle(3, INTERIOR_COLORS.windowFrame)
+    g.lineBetween(winX + winW / 2, winY, winX + winW / 2, winY + winH)
+    g.lineBetween(winX, winY + winH / 2, winX + winW, winY + winH / 2)
+
+    // === 11. DOOR (on the back wall) ===
+    const doorW = Math.min(45, backWallWidth * 0.22)
+    const doorX = backWall.left + 25
+    const doorTop = backWall.top + 20
+    const doorBottom = backWall.bottom
+
+    // Door frame (slightly larger than door)
+    g.fillStyle(INTERIOR_COLORS.cornerLine)
+    g.fillRect(doorX - 4, doorTop - 4, doorW + 8, doorBottom - doorTop + 4)
+
+    // Door body
+    g.fillStyle(INTERIOR_COLORS.doorWood)
+    g.fillRect(doorX, doorTop, doorW, doorBottom - doorTop)
+
+    // Door panels (inset rectangles)
+    g.fillStyle(INTERIOR_COLORS.doorPanels)
+    const panelW = doorW - 10
+    const panelH = Math.min(35, (doorBottom - doorTop - 30) / 2)
+    g.fillRect(doorX + 5, doorTop + 10, panelW, panelH)
+    g.fillRect(doorX + 5, doorTop + panelH + 20, panelW, panelH)
+
+    // Panel borders
+    g.lineStyle(1, INTERIOR_COLORS.cornerLine, 0.4)
+    g.strokeRect(doorX + 5, doorTop + 10, panelW, panelH)
+    g.strokeRect(doorX + 5, doorTop + panelH + 20, panelW, panelH)
+
+    // Door knob
+    g.fillStyle(INTERIOR_COLORS.doorKnob)
+    g.fillCircle(doorX + doorW - 8, doorTop + (doorBottom - doorTop) / 2, 4)
+
+    // Knob highlight
+    g.fillStyle(0xFFFFFF, 0.35)
+    g.fillCircle(doorX + doorW - 9, doorTop + (doorBottom - doorTop) / 2 - 1, 1.5)
+  }
+
+  /**
+   * Draw floor boards with perspective convergence
+   * Floor boards converge toward a vanishing point behind the back wall
+   */
+  private drawFloorBoards(g: Phaser.GameObjects.Graphics): void {
+    const { front, backWall, floorGrid } = ROOM_GEOMETRY
+
+    // === HORIZONTAL BOARD LINES (parallel to back wall, getting wider toward front) ===
+    g.lineStyle(1, INTERIOR_COLORS.floorWoodDark, 0.25)
+
+    for (let row = 1; row < floorGrid.rows; row++) {
+      const t = row / floorGrid.rows
+
+      // Y position interpolates from back wall bottom to front bottom
+      const y = backWall.bottom + (front.bottom - backWall.bottom) * t
+
+      // X positions interpolate with perspective (wider at front)
+      const leftX = backWall.left + (front.left - backWall.left) * t
+      const rightX = backWall.right + (front.right - backWall.right) * t
+
+      g.lineBetween(leftX, y, rightX, y)
+    }
+
+    // === VERTICAL BOARD LINES (converging toward vanishing point) ===
+    g.lineStyle(1, INTERIOR_COLORS.floorWoodDark, 0.18)
+
+    for (let col = 0; col <= floorGrid.cols; col++) {
+      const tCol = col / floorGrid.cols
+
+      // Back edge position (on back wall)
+      const backX = backWall.left + (backWall.right - backWall.left) * tCol
+
+      // Front edge position (on screen edge)
+      const frontX = front.left + (front.right - front.left) * tCol
+
+      g.lineBetween(backX, backWall.bottom, frontX, front.bottom)
+    }
+
+    // === WOOD GRAIN TEXTURE (subtle darker patches for depth) ===
+    g.fillStyle(INTERIOR_COLORS.floorWoodDark, 0.08)
+    for (let row = 0; row < floorGrid.rows - 1; row++) {
+      for (let col = 0; col < 4; col++) {
+        const t = (row + 0.5) / floorGrid.rows
+        const y = backWall.bottom + (front.bottom - backWall.bottom) * t
+
+        // Calculate row left/right with perspective
+        const rowLeft = backWall.left + (front.left - backWall.left) * t
+        const rowRight = backWall.right + (front.right - backWall.right) * t
+        const rowWidth = rowRight - rowLeft
+
+        // Stagger grain marks
+        const x = rowLeft + rowWidth * ((col + 0.2 + (row % 2) * 0.5) / 4)
+        const grainWidth = 12 + t * 20
+        const grainHeight = 3 + t * 3
+
+        // Draw only if within bounds
+        if (x > front.left && x < front.right) {
+          g.fillEllipse(x, y, grainWidth, grainHeight)
+        }
+      }
+    }
+  }
+
+  /**
+   * Calculate pixel position and scale for an item on the perspective floor grid
+   * Items at the back appear smaller and higher, items at front appear larger and lower
+   */
+  private getFloorPosition(
+    gridX: number,
+    gridY: number,
+    footprint: { w: number; h: number }
+  ): { x: number; y: number; scale: number } {
+    const { front, backWall, floorGrid } = ROOM_GEOMETRY
+
+    // Clamp grid position
+    const clampedX = Math.max(0, Math.min(gridX, floorGrid.cols - footprint.w))
+    const clampedY = Math.max(0, Math.min(gridY, floorGrid.rows - footprint.h))
+
+    // Calculate the center of the footprint in grid coordinates
+    const centerGridX = clampedX + footprint.w / 2
+    const centerGridY = clampedY + footprint.h / 2
+
+    // Interpolation factor (0 = back row, 1 = front row)
+    const t = centerGridY / floorGrid.rows
+
+    // Row geometry at this depth
+    const backWidth = backWall.right - backWall.left
+    const frontWidth = front.right - front.left
+    const rowWidth = backWidth + (frontWidth - backWidth) * t
+    const rowLeft = backWall.left + (front.left - backWall.left) * t
+
+    // Cell width at this row
+    const cellWidth = rowWidth / floorGrid.cols
+
+    // X position (center of footprint cell)
+    const x = rowLeft + centerGridX * cellWidth
+
+    // Y position interpolates from back wall bottom to front bottom
+    const y = backWall.bottom + (front.bottom - backWall.bottom) * t
+
+    // Scale factor (smaller at back, larger at front)
+    // Range from ~55% at back to 100% at front
+    const scale = 0.55 + 0.45 * t
+
+    return { x, y, scale }
+  }
+
+  /**
+   * Render exterior cottage view - fills entire screen
+   */
+  private renderExteriorView(): void {
+    const g = this.roomGraphics
+    if (!g) return
+
+    const { width, height } = this.scale
+    const cx = width / 2
+
+    // Layout coordinates - fills entire screen
+    const groundY = Math.round(height * 0.55) // Ground starts at 55% down
+    const houseTop = 120 // Top of house walls
+    const houseBottom = groundY - 20 // House sits slightly above ground
+    const roofPeak = 40 // Peak of the roof (near top)
+    const houseLeft = 30
+    const houseRight = width - 30
+    const houseWidth = houseRight - houseLeft
+
+    // 1. Sky gradient (fills top portion)
+    g.fillStyle(EXTERIOR_COLORS.skyTop)
+    g.fillRect(0, 0, width, groundY / 2)
+    g.fillStyle(EXTERIOR_COLORS.skyBottom)
+    g.fillRect(0, groundY / 2, width, groundY / 2)
+
+    // 2. Grass/ground - extends to bottom of screen
+    g.fillStyle(EXTERIOR_COLORS.grass)
+    g.fillRect(0, groundY, width, height - groundY)
+
+    // Grass texture (subtle darker patches)
+    g.fillStyle(EXTERIOR_COLORS.grassDark, 0.3)
+    for (let i = 0; i < 8; i++) {
+      const gx = 20 + (i * 38) % width
+      const gy = groundY + 15 + (i * 17) % 40
+      g.fillEllipse(gx, gy, 25, 8)
+    }
+
+    // 3. Roof (triangle with shadow)
+    const roofOverhang = 15
+
+    // Roof shadow (right side)
+    g.fillStyle(EXTERIOR_COLORS.roofShadow)
+    g.beginPath()
+    g.moveTo(cx, roofPeak - 5)
+    g.lineTo(houseRight + roofOverhang + 5, houseTop + 5)
+    g.lineTo(houseRight + roofOverhang, houseTop)
+    g.lineTo(cx, roofPeak)
+    g.closePath()
+    g.fillPath()
+
+    // Main roof
+    g.fillStyle(EXTERIOR_COLORS.roofShingles)
+    g.beginPath()
+    g.moveTo(cx, roofPeak)
+    g.lineTo(houseRight + roofOverhang, houseTop)
+    g.lineTo(houseLeft - roofOverhang, houseTop)
+    g.closePath()
+    g.fillPath()
+
+    // Roof shingle lines
+    g.lineStyle(1, EXTERIOR_COLORS.roofShadow, 0.5)
+    const shingleRows = 4
+    for (let i = 1; i <= shingleRows; i++) {
+      const t = i / (shingleRows + 1)
+      const y = roofPeak + (houseTop - roofPeak) * t
+      const halfWidth = (houseWidth / 2 + roofOverhang) * t
+      g.lineBetween(cx - halfWidth, y, cx + halfWidth, y)
+    }
+
+    // 4. House body
+    g.fillStyle(EXTERIOR_COLORS.houseSiding)
+    g.fillRect(houseLeft, houseTop, houseWidth, houseBottom - houseTop)
+
+    // House shadow on right side
+    g.fillStyle(EXTERIOR_COLORS.houseShadow, 0.3)
+    g.fillRect(houseRight - 20, houseTop, 20, houseBottom - houseTop)
+
+    // 5. Door (centered)
+    const doorW = 30
+    const doorH = 55
+    const doorX = cx - doorW / 2
+    const doorY = houseBottom - doorH
+
+    g.fillStyle(EXTERIOR_COLORS.roofShingles)
+    g.fillRect(doorX, doorY, doorW, doorH)
+
+    // Door frame
+    g.lineStyle(2, 0x3D2817)
+    g.strokeRect(doorX, doorY, doorW, doorH)
+
+    // Door panels
+    g.lineStyle(1, 0x3D2817)
+    g.strokeRect(doorX + 5, doorY + 5, doorW - 10, 20)
+    g.strokeRect(doorX + 5, doorY + 30, doorW - 10, 20)
+
+    // Door knob
+    g.fillStyle(INTERIOR_COLORS.doorKnob)
+    g.fillCircle(doorX + doorW - 8, doorY + doorH / 2, 3)
+
+    // 6. Windows (two, flanking the door)
+    const winW = 28
+    const winH = 32
+    const winY = houseTop + 40
+
+    // Left window
+    const leftWinX = houseLeft + 20
+    g.fillStyle(INTERIOR_COLORS.windowFrame)
+    g.fillRect(leftWinX - 3, winY - 3, winW + 6, winH + 6)
+    g.fillStyle(INTERIOR_COLORS.windowGlass)
+    g.fillRect(leftWinX, winY, winW, winH)
+    g.lineStyle(2, INTERIOR_COLORS.windowFrame)
+    g.lineBetween(leftWinX + winW / 2, winY, leftWinX + winW / 2, winY + winH)
+    g.lineBetween(leftWinX, winY + winH / 2, leftWinX + winW, winY + winH / 2)
+
+    // Right window
+    const rightWinX = houseRight - 20 - winW
+    g.fillStyle(INTERIOR_COLORS.windowFrame)
+    g.fillRect(rightWinX - 3, winY - 3, winW + 6, winH + 6)
+    g.fillStyle(INTERIOR_COLORS.windowGlass)
+    g.fillRect(rightWinX, winY, winW, winH)
+    g.lineStyle(2, INTERIOR_COLORS.windowFrame)
+    g.lineBetween(rightWinX + winW / 2, winY, rightWinX + winW / 2, winY + winH)
+    g.lineBetween(rightWinX, winY + winH / 2, rightWinX + winW, winY + winH / 2)
+
+    // 7. Path (stone path leading to door)
+    g.fillStyle(EXTERIOR_COLORS.pathStone)
+    g.beginPath()
+    g.moveTo(doorX - 5, houseBottom)
+    g.lineTo(doorX + doorW + 5, houseBottom)
+    g.lineTo(doorX + doorW + 20, height)
+    g.lineTo(doorX - 20, height)
+    g.closePath()
+    g.fillPath()
+
+    // Path stone lines
+    g.lineStyle(1, 0x8B7355, 0.4)
+    for (let py = houseBottom + 15; py < height; py += 18) {
+      const t = (py - houseBottom) / (height - houseBottom)
+      const pathHalfW = 20 + t * 15
+      g.lineBetween(cx - pathHalfW, py, cx + pathHalfW, py)
+    }
+
+    // 8. Fence sections (left and right)
+    const fenceH = 35
+    const fenceY = groundY - fenceH + 10
+
+    // Left fence
+    g.fillStyle(EXTERIOR_COLORS.fenceWood)
+    for (let i = 0; i < 3; i++) {
+      const fx = 15 + i * 18
+      g.fillRect(fx, fenceY, 6, fenceH)
+      // Picket top
+      g.beginPath()
+      g.moveTo(fx, fenceY)
+      g.lineTo(fx + 3, fenceY - 6)
+      g.lineTo(fx + 6, fenceY)
+      g.closePath()
+      g.fillPath()
+    }
+    // Fence rail
+    g.fillRect(10, fenceY + 10, 55, 4)
+
+    // Right fence
+    for (let i = 0; i < 3; i++) {
+      const fx = width - 55 + i * 18
+      g.fillRect(fx, fenceY, 6, fenceH)
+      g.beginPath()
+      g.moveTo(fx, fenceY)
+      g.lineTo(fx + 3, fenceY - 6)
+      g.lineTo(fx + 6, fenceY)
+      g.closePath()
+      g.fillPath()
+    }
+    g.fillRect(width - 60, fenceY + 10, 55, 4)
+
+    // 9. Bushes (decorative shrubs)
+    g.fillStyle(EXTERIOR_COLORS.bushGreen)
+
+    // Left bushes
+    g.fillEllipse(35, groundY - 5, 22, 14)
+    g.fillEllipse(25, groundY, 15, 10)
+
+    // Right bushes
+    g.fillEllipse(width - 35, groundY - 5, 22, 14)
+    g.fillEllipse(width - 25, groundY, 15, 10)
+
+    // Bushes by door
+    g.fillEllipse(doorX - 15, houseBottom - 8, 14, 10)
+    g.fillEllipse(doorX + doorW + 15, houseBottom - 8, 14, 10)
+
+    // 10. Chimney (small, on roof)
+    g.fillStyle(EXTERIOR_COLORS.roofShingles)
+    g.fillRect(cx + 25, roofPeak + 15, 18, 30)
+    g.fillStyle(EXTERIOR_COLORS.roofShadow)
+    g.fillRect(cx + 25, roofPeak + 15, 18, 5)
   }
 
   /**
@@ -962,8 +1561,12 @@ export class HouseScene extends Phaser.Scene {
       this.hotspotsContainer.setVisible(false)
     }
 
-    // Clear existing decorate containers
-    this.clearDecorateMode()
+    // Clear existing containers
+    this.clearPlacementContainers()
+    this.gridOverlay?.destroy()
+    this.gridOverlay = null
+    this.characterContainer?.destroy()
+    this.characterContainer = null
 
     const { width, height } = this.scale
 
@@ -975,25 +1578,12 @@ export class HouseScene extends Phaser.Scene {
     this.background = this.add.rectangle(width / 2, height / 2, width, height, bgColor)
     this.background.setDepth(0)
 
-    // Create layer containers in proper order
-    this.floorBaseContainer = this.add.container(0, 0)
-    this.floorBaseContainer.setDepth(10)
-
-    this.rugContainer = this.add.container(0, 0)
-    this.rugContainer.setDepth(20)
-
-    this.furnitureContainer = this.add.container(0, 0)
-    this.furnitureContainer.setDepth(30)
+    // Create placement containers
+    this.createPlacementContainers()
 
     // Character layer (Phase 4: avatar, body double)
     this.characterContainer = this.add.container(0, 0)
     this.characterContainer.setDepth(35)
-
-    this.wallBaseContainer = this.add.container(0, 0)
-    this.wallBaseContainer.setDepth(40)
-
-    this.wallDecorContainer = this.add.container(0, 0)
-    this.wallDecorContainer.setDepth(50)
 
     // Grid overlay on top (but below ghost)
     this.gridOverlay = this.add.container(0, 0)
@@ -1035,26 +1625,17 @@ export class HouseScene extends Phaser.Scene {
   }
 
   /**
-   * Clear decorate mode elements
+   * Clear decorate mode elements (grid overlay, input handlers)
    */
   private clearDecorateMode(): void {
-    this.placedItems.forEach(item => item.container.destroy())
-    this.placedItems.clear()
+    // Clear placement containers (will be recreated in renderScene)
+    this.clearPlacementContainers()
 
-    this.floorBaseContainer?.destroy()
-    this.rugContainer?.destroy()
-    this.furnitureContainer?.destroy()
+    // Clear decorate-specific elements
     this.characterContainer?.destroy()
-    this.wallBaseContainer?.destroy()
-    this.wallDecorContainer?.destroy()
-    this.gridOverlay?.destroy()
-
-    this.floorBaseContainer = null
-    this.rugContainer = null
-    this.furnitureContainer = null
     this.characterContainer = null
-    this.wallBaseContainer = null
-    this.wallDecorContainer = null
+
+    this.gridOverlay?.destroy()
     this.gridOverlay = null
 
     this.input.off('pointerdown', this.handleDecoratePointerDown, this)
@@ -1116,6 +1697,7 @@ export class HouseScene extends Phaser.Scene {
 
   /**
    * Render grid overlay (subtle dotted cells)
+   * For floor in interior view, renders a perspective grid
    */
   private renderGridOverlay(): void {
     if (!this.gridOverlay) return
@@ -1127,7 +1709,13 @@ export class HouseScene extends Phaser.Scene {
       const region = this.getRegionConfig(regionId)
       if (!region) continue
 
-      // Draw grid dots at intersections
+      // Interior floor uses perspective grid
+      if (regionId === 'floor' && this.currentView === 'interior') {
+        this.renderPerspectiveFloorGrid()
+        continue
+      }
+
+      // Wall and yard use flat grid
       for (let gx = 0; gx <= region.gridWidth; gx++) {
         for (let gy = 0; gy <= region.gridHeight; gy++) {
           const px = region.x + gx * this.GRID_SIZE
@@ -1152,6 +1740,65 @@ export class HouseScene extends Phaser.Scene {
   }
 
   /**
+   * Render a perspective floor grid for decorate mode
+   * Grid dots spread wider toward the front (bottom) of the room
+   */
+  private renderPerspectiveFloorGrid(): void {
+    if (!this.gridOverlay) return
+
+    const { front, backWall, floorGrid } = ROOM_GEOMETRY
+
+    // Draw grid dots at each intersection
+    for (let row = 0; row <= floorGrid.rows; row++) {
+      for (let col = 0; col <= floorGrid.cols; col++) {
+        // Interpolation factor (0 = back row, 1 = front row)
+        const t = row / floorGrid.rows
+
+        // Row geometry at this depth
+        const rowLeft = backWall.left + (front.left - backWall.left) * t
+        const rowRight = backWall.right + (front.right - backWall.right) * t
+        const rowWidth = rowRight - rowLeft
+        const cellWidth = rowWidth / floorGrid.cols
+
+        // X position for this column
+        const px = rowLeft + col * cellWidth
+
+        // Y position interpolates from back wall bottom to front bottom
+        const py = backWall.bottom + (front.bottom - backWall.bottom) * t
+
+        // Dot size scales with perspective (larger at front)
+        const dotSize = 1 + t * 0.5
+
+        const dot = this.add.circle(px, py, dotSize, 0xffffff, 0.3)
+        this.gridOverlay.add(dot)
+      }
+    }
+
+    // Draw subtle grid lines
+    const graphics = this.add.graphics()
+    graphics.lineStyle(1, 0xffffff, 0.1)
+
+    // Horizontal lines
+    for (let row = 0; row <= floorGrid.rows; row++) {
+      const t = row / floorGrid.rows
+      const y = backWall.bottom + (front.bottom - backWall.bottom) * t
+      const leftX = backWall.left + (front.left - backWall.left) * t
+      const rightX = backWall.right + (front.right - backWall.right) * t
+      graphics.lineBetween(leftX, y, rightX, y)
+    }
+
+    // Vertical lines (converging)
+    for (let col = 0; col <= floorGrid.cols; col++) {
+      const tCol = col / floorGrid.cols
+      const backX = backWall.left + (backWall.right - backWall.left) * tCol
+      const frontX = front.left + (front.right - front.left) * tCol
+      graphics.lineBetween(backX, backWall.bottom, frontX, front.bottom)
+    }
+
+    this.gridOverlay.add(graphics)
+  }
+
+  /**
    * Render all placements
    */
   private renderPlacements(): void {
@@ -1171,9 +1818,11 @@ export class HouseScene extends Phaser.Scene {
 
     // Sort by depth (bottom edge, then id)
     const sortedPlacements = [...viewPlacements].sort((a, b) => {
-      // Get footprints (we'd need item defs, for now assume 2x2)
-      const aBottom = a.y + 2 // placeholder
-      const bBottom = b.y + 2
+      // Get actual footprints from catalog for proper depth sorting
+      const aFootprint = this.itemCatalog.get(a.itemId)?.footprint ?? { w: 2, h: 2 }
+      const bFootprint = this.itemCatalog.get(b.itemId)?.footprint ?? { w: 2, h: 2 }
+      const aBottom = a.y + aFootprint.h
+      const bBottom = b.y + bFootprint.h
       if (aBottom !== bBottom) return aBottom - bBottom
       return a.id.localeCompare(b.id)
     })
@@ -1191,19 +1840,33 @@ export class HouseScene extends Phaser.Scene {
     const region = this.getRegionConfig(placement.region)
     if (!region) return
 
-    // Placeholder footprint (in real impl, get from catalog)
-    const footprint = { w: 2, h: 2 }
+    // Get actual footprint from catalog, fallback to 2x2
+    const catalogItem = this.itemCatalog.get(placement.itemId)
+    const footprint = catalogItem?.footprint ?? { w: 2, h: 2 }
 
-    // Calculate pixel position
-    const px = region.x + placement.x * this.GRID_SIZE + (footprint.w * this.GRID_SIZE) / 2
-    const py = region.y + placement.y * this.GRID_SIZE + (footprint.h * this.GRID_SIZE) / 2
+    // Calculate pixel position based on region type
+    let px: number
+    let py: number
+    let perspectiveScale = 1
+
+    if (placement.region === 'floor' && this.currentView === 'interior') {
+      // Use perspective positioning for floor items
+      const floorPos = this.getFloorPosition(placement.x, placement.y, footprint)
+      px = floorPos.x
+      py = floorPos.y
+      perspectiveScale = floorPos.scale
+    } else {
+      // Wall and yard use flat grid positioning
+      px = region.x + placement.x * this.GRID_SIZE + (footprint.w * this.GRID_SIZE) / 2
+      py = region.y + placement.y * this.GRID_SIZE + (footprint.h * this.GRID_SIZE) / 2
+    }
 
     // Create container
     const container = this.add.container(px, py)
 
-    // Grid-based dimensions for fallback
-    const gridWidth = footprint.w * this.GRID_SIZE
-    const gridHeight = footprint.h * this.GRID_SIZE
+    // Grid-based dimensions for fallback (scaled by perspective)
+    const gridWidth = footprint.w * this.GRID_SIZE * perspectiveScale
+    const gridHeight = footprint.h * this.GRID_SIZE * perspectiveScale
 
     // Try to use sprite if texture exists
     const textureKey = placement.itemId
@@ -1214,24 +1877,35 @@ export class HouseScene extends Phaser.Scene {
       // Use actual sprite
       const sprite = this.add.image(0, 0, textureKey)
 
-      // Scale sprite to fit grid cell while maintaining aspect ratio
-      const scaleX = gridWidth / sprite.width
-      const scaleY = gridHeight / sprite.height
-      const scale = Math.min(scaleX, scaleY) * 0.9 // 90% to leave some padding
+      // Scale sprite to fill its footprint area nicely
+      // With GRID_SIZE=32, a 2x2 footprint is 64x64 pixels
+      const targetWidth = footprint.w * this.GRID_SIZE * 0.9 * perspectiveScale
+      const targetHeight = footprint.h * this.GRID_SIZE * 0.9 * perspectiveScale
+
+      // Scale to fit within footprint while maintaining aspect ratio
+      const scaleX = targetWidth / sprite.width
+      const scaleY = targetHeight / sprite.height
+      const scale = Math.min(scaleX, scaleY)
 
       sprite.setScale(scale)
+
+      // Position sprite so its bottom aligns with the grid position
+      // This gives better visual grounding
+      sprite.setOrigin(0.5, 0.85)
+
       rect = sprite
       container.add(sprite)
     } else {
-      // Fallback to colored rectangle
+      // Fallback to colored rectangle (scaled for perspective)
       const color = this.getPlacementColor(placement.itemId)
       const fallbackRect = this.add.rectangle(0, 0, gridWidth - 2, gridHeight - 2, color)
       fallbackRect.setStrokeStyle(1, 0xffffff, 0.5)
       rect = fallbackRect
 
       // Label only shown for fallback rectangles
+      const fontSize = Math.max(6, Math.round(8 * perspectiveScale))
       label = this.add.text(0, 0, placement.itemId.slice(0, 8), {
-        fontSize: '8px',
+        fontSize: `${fontSize}px`,
         color: '#ffffff',
         fontFamily: 'system-ui, sans-serif',
       })
@@ -1250,53 +1924,58 @@ export class HouseScene extends Phaser.Scene {
       targetContainer.add(container)
     }
 
-    // Set depth based on bottom edge
-    const bottomEdge = placement.y + footprint.h
-    container.setDepth(bottomEdge * 10 + placement.id.charCodeAt(0) % 10)
+    // Set depth based on grid Y position (items further back have lower depth)
+    // For floor items with perspective, use the actual py position
+    const depthValue = placement.region === 'floor'
+      ? py * 10 + placement.id.charCodeAt(0) % 10
+      : (placement.y + footprint.h) * 10 + placement.id.charCodeAt(0) % 10
+    container.setDepth(depthValue)
 
-    // Make interactive
-    rect.setInteractive({ useHandCursor: true, draggable: true })
+    // Only make interactive in decorate mode
+    if (this.decorateMode) {
+      rect.setInteractive({ useHandCursor: true, draggable: true })
 
-    rect.on('pointerdown', () => {
-      if (this.ghostItemDef) return // Don't interact while placing
-      bridge.emit('placementTapped', { placementId: placement.id })
-    })
-
-    rect.on('dragstart', () => {
-      if (this.ghostItemDef) return
-      this.startDragPlacement(placement.id)
-    })
-
-    rect.on('drag', (_pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
-      if (!this.draggingPlacement) return
-      container.setPosition(px + dragX, py + dragY)
-
-      // Calculate grid position
-      const newGridX = Math.floor((px + dragX - region.x) / this.GRID_SIZE)
-      const newGridY = Math.floor((py + dragY - region.y) / this.GRID_SIZE)
-
-      bridge.emit('placementDragged', {
-        placementId: placement.id,
-        x: newGridX,
-        y: newGridY,
-      })
-    })
-
-    rect.on('dragend', () => {
-      if (!this.draggingPlacement) return
-
-      // Calculate final grid position
-      const finalGridX = Math.floor((container.x - region.x) / this.GRID_SIZE)
-      const finalGridY = Math.floor((container.y - region.y) / this.GRID_SIZE)
-
-      bridge.emit('placementDropped', {
-        placementId: placement.id,
-        x: finalGridX,
-        y: finalGridY,
+      rect.on('pointerdown', () => {
+        if (this.ghostItemDef) return // Don't interact while placing
+        bridge.emit('placementTapped', { placementId: placement.id })
       })
 
-      this.draggingPlacement = null
-    })
+      rect.on('dragstart', () => {
+        if (this.ghostItemDef) return
+        this.startDragPlacement(placement.id)
+      })
+
+      rect.on('drag', (_pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
+        if (!this.draggingPlacement) return
+        container.setPosition(px + dragX, py + dragY)
+
+        // Calculate grid position
+        const newGridX = Math.floor((px + dragX - region.x) / this.GRID_SIZE)
+        const newGridY = Math.floor((py + dragY - region.y) / this.GRID_SIZE)
+
+        bridge.emit('placementDragged', {
+          placementId: placement.id,
+          x: newGridX,
+          y: newGridY,
+        })
+      })
+
+      rect.on('dragend', () => {
+        if (!this.draggingPlacement) return
+
+        // Calculate final grid position
+        const finalGridX = Math.floor((container.x - region.x) / this.GRID_SIZE)
+        const finalGridY = Math.floor((container.y - region.y) / this.GRID_SIZE)
+
+        bridge.emit('placementDropped', {
+          placementId: placement.id,
+          x: finalGridX,
+          y: finalGridY,
+        })
+
+        this.draggingPlacement = null
+      })
+    }
 
     // Store reference
     const placedItem: PlacedItemSprite = {
@@ -1380,15 +2059,80 @@ export class HouseScene extends Phaser.Scene {
 
     this.ghostContainer.add([rect, label])
 
-    // Set up pointer tracking
+    // Set up pointer tracking - use pointerdown for click-to-place (more reliable than pointerup)
     this.input.on('pointermove', this.handleGhostMove, this)
-    this.input.on('pointerup', this.handleGhostDrop, this)
+    this.input.on('pointerdown', this.handleGhostDrop, this)
+    console.log('[HouseScene] Ghost event listeners attached')
+
+    // Initialize ghost position at current pointer location
+    const pointer = this.input.activePointer
+    this.initializeGhostPosition(pointer.x, pointer.y, itemDef)
+  }
+
+  /**
+   * Initialize ghost position from pointer coordinates
+   */
+  private initializeGhostPosition(pointerX: number, pointerY: number, itemDef: ItemDefForGhost): void {
+    // Find which region the pointer is in
+    const regions: ('floor' | 'wall' | 'yard')[] = ['floor', 'wall', 'yard']
+
+    for (const regionId of regions) {
+      const region = this.getRegionConfig(regionId)
+      if (!region) continue
+
+      if (
+        pointerX >= region.x &&
+        pointerX < region.x + region.width &&
+        pointerY >= region.y &&
+        pointerY < region.y + region.height
+      ) {
+        // Calculate grid position
+        let gridX = Math.floor((pointerX - region.x) / this.GRID_SIZE)
+        let gridY = Math.floor((pointerY - region.y) / this.GRID_SIZE)
+
+        // Clamp to valid range considering footprint
+        gridX = Math.max(0, Math.min(gridX, region.gridWidth - itemDef.footprint.w))
+        gridY = Math.max(0, Math.min(gridY, region.gridHeight - itemDef.footprint.h))
+
+        // Update ghost state
+        this.ghostGridX = gridX
+        this.ghostGridY = gridY
+        this.ghostRegion = regionId
+
+        // Position the ghost container
+        const px = region.x + gridX * this.GRID_SIZE + (itemDef.footprint.w * this.GRID_SIZE) / 2
+        const py = region.y + gridY * this.GRID_SIZE + (itemDef.footprint.h * this.GRID_SIZE) / 2
+        this.ghostContainer?.setPosition(px, py)
+
+        // Emit initial position to React for validation
+        bridge.emit('ghostMoved', { x: gridX, y: gridY, region: regionId })
+        return
+      }
+    }
+
+    // If pointer isn't in any region, default to center of expected region
+    const expectedRegion = this.getRegionConfig(this.ghostRegion)
+    if (expectedRegion) {
+      const gridX = Math.floor(expectedRegion.gridWidth / 2 - itemDef.footprint.w / 2)
+      const gridY = Math.floor(expectedRegion.gridHeight / 2 - itemDef.footprint.h / 2)
+
+      this.ghostGridX = gridX
+      this.ghostGridY = gridY
+
+      const px = expectedRegion.x + gridX * this.GRID_SIZE + (itemDef.footprint.w * this.GRID_SIZE) / 2
+      const py = expectedRegion.y + gridY * this.GRID_SIZE + (itemDef.footprint.h * this.GRID_SIZE) / 2
+      this.ghostContainer?.setPosition(px, py)
+
+      // Emit initial position
+      bridge.emit('ghostMoved', { x: gridX, y: gridY, region: this.ghostRegion })
+    }
   }
 
   /**
    * End ghost placement
    */
   private endGhostInternal(): void {
+    console.log('[HouseScene] endGhostInternal called')
     this.ghostItemDef = null
 
     if (this.ghostContainer) {
@@ -1397,7 +2141,7 @@ export class HouseScene extends Phaser.Scene {
     }
 
     this.input.off('pointermove', this.handleGhostMove, this)
-    this.input.off('pointerup', this.handleGhostDrop, this)
+    this.input.off('pointerdown', this.handleGhostDrop, this)
   }
 
   /**
@@ -1490,10 +2234,19 @@ export class HouseScene extends Phaser.Scene {
   }
 
   /**
-   * Handle ghost drop
+   * Handle ghost drop (called on pointerdown for click-to-place)
    */
-  private handleGhostDrop(): void {
-    if (!this.ghostItemDef) return
+  private handleGhostDrop(_pointer: Phaser.Input.Pointer): void {
+    if (!this.ghostItemDef) {
+      console.log('[HouseScene] handleGhostDrop: no ghostItemDef, ignoring')
+      return
+    }
+
+    console.log('[HouseScene] handleGhostDrop: emitting ghostDropped', {
+      x: this.ghostGridX,
+      y: this.ghostGridY,
+      region: this.ghostRegion,
+    })
 
     bridge.emit('ghostDropped', {
       x: this.ghostGridX,
@@ -1503,10 +2256,11 @@ export class HouseScene extends Phaser.Scene {
   }
 
   /**
-   * Handle pointer down in decorate mode
+   * Handle pointer down in decorate mode (for selecting/deselecting items)
    */
   private handleDecoratePointerDown(pointer: Phaser.Input.Pointer): void {
-    if (this.ghostItemDef) return // Placing item
+    console.log('[HouseScene] handleDecoratePointerDown, ghostItemDef:', !!this.ghostItemDef)
+    if (this.ghostItemDef) return // Placing item - let handleGhostDrop handle it
 
     // Check if clicking on empty space
     const regions: ('floor' | 'wall' | 'yard')[] = ['floor', 'wall', 'yard']

@@ -1,55 +1,55 @@
 {
-  "gridSize": 16,
+  "gridSize": 32,
   "defaultRoom": "main",
   "rooms": {
     "main": {
       "id": "main",
       "name": "Your Homestead",
       "canvasSize": {
-        "width": 320,
-        "height": 320
+        "width": 360,
+        "height": 640
       },
       "regions": {
         "floor": {
           "id": "floor",
           "name": "Floor",
-          "x": 32,
-          "y": 128,
-          "width": 256,
-          "height": 160,
-          "gridWidth": 16,
-          "gridHeight": 10,
+          "x": 60,
+          "y": 380,
+          "width": 240,
+          "height": 240,
+          "gridWidth": 8,
+          "gridHeight": 6,
           "allowedCategories": ["furniture", "decor", "rug"],
-          "description": "Main living area floor space"
+          "description": "Perspective floor grid (back wall to front)"
         },
         "wall": {
           "id": "wall",
           "name": "Wall",
-          "x": 32,
-          "y": 32,
-          "width": 256,
-          "height": 96,
-          "gridWidth": 16,
-          "gridHeight": 6,
+          "x": 60,
+          "y": 120,
+          "width": 240,
+          "height": 260,
+          "gridWidth": 6,
+          "gridHeight": 5,
           "allowedCategories": ["wall_decor"],
           "description": "Back wall for hanging items"
         },
         "yard": {
           "id": "yard",
           "name": "Yard",
-          "x": 32,
-          "y": 288,
-          "width": 256,
-          "height": 32,
-          "gridWidth": 16,
-          "gridHeight": 2,
+          "x": 20,
+          "y": 400,
+          "width": 320,
+          "height": 200,
+          "gridWidth": 10,
+          "gridHeight": 6,
           "allowedCategories": ["outdoor"],
           "description": "Outdoor area in front of house"
         }
       },
       "avatarAnchor": {
-        "x": 160,
-        "y": 240,
+        "x": 180,
+        "y": 520,
         "facing": "down"
       },
       "finishes": {
