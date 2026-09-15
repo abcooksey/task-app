@@ -198,6 +198,13 @@
       "height": 89,
       "description": "Decorative item: decor speaker"
     },
+    "decor_speaker_small": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_speaker_small.png",
+      "width": 29,
+      "height": 52,
+      "description": "Decorative item: decor speaker small"
+    },
     "decor_string_lights": {
       "type": "image",
       "path": "/assets/sprites/decor/decor_string_lights.png",
@@ -211,6 +218,13 @@
       "width": 51,
       "height": 55,
       "description": "Decorative item: decor teddy bear"
+    },
+    "decor_trashcan": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_trashcan.png",
+      "width": 33,
+      "height": 64,
+      "description": "Decorative item: decor trashcan"
     },
     "decor_tree_holiday": {
       "type": "image",
@@ -288,6 +302,13 @@
       "width": 177,
       "height": 163,
       "description": "Furniture item: furniture bathtub"
+    },
+    "furniture_bed_bunk": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bed_bunk.png",
+      "width": 172,
+      "height": 211,
+      "description": "Furniture item: furniture bed bunk"
     },
     "furniture_bed_double": {
       "type": "image",
@@ -723,6 +744,13 @@
       "height": 98,
       "description": "Furniture item: furniture toilet"
     },
+    "furniture_tv_modern": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_tv_modern.png",
+      "width": 74,
+      "height": 93,
+      "description": "Furniture item: furniture tv modern"
+    },
     "furniture_tv_stand": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_tv_stand.png",
@@ -912,6 +940,13 @@
       "height": 144,
       "description": "Rug/floor covering: rug circular soft"
     },
+    "rug_doormat": {
+      "type": "image",
+      "path": "/assets/sprites/rug/rug_doormat.png",
+      "width": 64,
+      "height": 47,
+      "description": "Rug/floor covering: rug doormat"
+    },
     "rug_modern_geo": {
       "type": "image",
       "path": "/assets/sprites/rug/rug_modern_geo.png",
@@ -1009,6 +1044,13 @@
       "width": 64,
       "height": 64,
       "description": "Surface decoration: surface candle small"
+    },
+    "surface_computer_mouse": {
+      "type": "image",
+      "path": "/assets/sprites/surface_decor/surface_computer_mouse.png",
+      "width": 11,
+      "height": 11,
+      "description": "Surface decoration: surface computer mouse"
     },
     "surface_gingerbread": {
       "type": "image",

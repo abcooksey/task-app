@@ -257,6 +257,14 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   furniture_washer: { source: furnitureIsometric, file: 'washer_SE.png' },
   furniture_dryer: { source: furnitureIsometric, file: 'dryer_SE.png' },
   furniture_washer_dryer_stacked: { source: furnitureIsometric, file: 'washerDryerStacked_SE.png' },
+
+  // ============ MISC FURNITURE (6) ============
+  furniture_bed_bunk: { source: furnitureIsometric, file: 'bedBunk_SE.png' },
+  furniture_tv_modern: { source: furnitureIsometric, file: 'televisionModern_SE.png' },
+  decor_trashcan: { source: furnitureIsometric, file: 'trashcan_SE.png' },
+  decor_speaker_small: { source: furnitureIsometric, file: 'speakerSmall_SE.png' },
+  rug_doormat: { source: furnitureIsometric, file: 'rugDoormat_SE.png' },
+  surface_computer_mouse: { source: furnitureIsometric, file: 'computerMouse_SE.png' },
 }
 
 // Track statistics
