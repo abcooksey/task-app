@@ -15,15 +15,15 @@ All game sprites are sourced from [Kenney.nl](https://kenney.nl) and are license
 - **License**: CC0 1.0 (Public Domain)
 - **Author**: Kenney (kenney.nl)
 
-**Assets used (101 items):**
+**Assets used (134 items):**
 
 | Category | Assets |
 |----------|--------|
-| Furniture | furniture_sofa_blue, furniture_sofa_cream, furniture_sofa_basic, furniture_sofa_cozy, furniture_sofa_modern, furniture_armchair_plush, furniture_armchair_vintage, furniture_bed_single, furniture_bed_double, furniture_desk_wooden, furniture_desk_modern, furniture_desk_simple, furniture_desk_vintage, furniture_table_coffee, furniture_table_coffee_glass, furniture_table_side, furniture_table_dining, furniture_table_glass, furniture_bookshelf_tall, furniture_bookshelf_short, furniture_bookshelf_antique, furniture_wardrobe, furniture_dresser, furniture_dresser_vintage, furniture_chair_dining, furniture_chair_wooden, furniture_chair_modern, furniture_stool, furniture_plant_stand, furniture_reading_chair, furniture_tv_stand, furniture_tv_vintage, furniture_cabinet, furniture_nightstand, furniture_ottoman, furniture_bench_cushion, furniture_mini_fridge, furniture_microwave |
-| Decor | decor_plant_fern, decor_plant_monstera, decor_plant_small, decor_plant_medium, decor_plant_large, decor_plant_hanging, decor_plant_succulent, decor_lamp_floor, decor_lamp_floor_arc, decor_lamp_table, decor_lamp_warm, decor_lamp_modern, decor_lamp_antique, decor_vase_tall, decor_plant_cactus, decor_basket_woven, decor_cushion_set, decor_pumpkin_small, decor_pumpkin_large, decor_jack_o_lantern, decor_candelabra, decor_blanket_knit, decor_cocoa_station, decor_teddy_bear, decor_radio_vintage, decor_coat_rack, decor_speaker, decor_pillow, decor_pillow_long |
-| Rugs | rug_basic, rug_round_cream, rug_circular_soft, rug_modern_geo, rug_vintage_persian, rug_sheepskin, rug_autumn_leaves, rug_spiderweb, rug_winter_pattern, rug_rectangular, rug_soft_square |
+| Furniture | furniture_sofa_blue, furniture_sofa_cream, furniture_sofa_basic, furniture_sofa_cozy, furniture_sofa_modern, furniture_armchair_plush, furniture_armchair_vintage, furniture_bed_single, furniture_bed_double, furniture_bed_bunk, furniture_desk_wooden, furniture_desk_modern, furniture_desk_simple, furniture_desk_vintage, furniture_table_coffee, furniture_table_coffee_glass, furniture_table_coffee_square, furniture_table_side, furniture_table_dining, furniture_table_glass, furniture_table_basic, furniture_table_cloth, furniture_table_cross, furniture_bookshelf_tall, furniture_bookshelf_short, furniture_bookshelf_antique, furniture_wardrobe, furniture_dresser, furniture_dresser_vintage, furniture_chair_dining, furniture_chair_wooden, furniture_chair_modern, furniture_chair_cushion, furniture_chair_rounded, furniture_chair_desk, furniture_chair_accent, furniture_stool, furniture_stool_square, furniture_plant_stand, furniture_reading_chair, furniture_tv_stand, furniture_tv_vintage, furniture_tv_modern, furniture_cabinet, furniture_nightstand, furniture_ottoman, furniture_bench_cushion, furniture_bench_low, furniture_mini_fridge, furniture_microwave, furniture_fridge, furniture_fridge_large, furniture_kitchen_bar, furniture_range_hood, furniture_stove, furniture_stove_electric, furniture_cabinet_kitchen, furniture_cabinet_kitchen_drawer, furniture_cabinet_upper, furniture_cabinet_upper_double, furniture_sink_kitchen, furniture_washer, furniture_dryer, furniture_washer_dryer_stacked, furniture_bathtub, furniture_shower, furniture_shower_round, furniture_sink_bathroom, furniture_sink_square, furniture_cabinet_bathroom, furniture_cabinet_bathroom_drawer, furniture_toilet |
+| Decor | decor_plant_fern, decor_plant_monstera, decor_plant_small, decor_plant_medium, decor_plant_large, decor_plant_hanging, decor_plant_succulent, decor_lamp_floor, decor_lamp_floor_arc, decor_lamp_table, decor_lamp_warm, decor_lamp_modern, decor_lamp_antique, decor_vase_tall, decor_plant_cactus, decor_basket_woven, decor_cushion_set, decor_pumpkin_small, decor_pumpkin_large, decor_jack_o_lantern, decor_candelabra, decor_blanket_knit, decor_cocoa_station, decor_teddy_bear, decor_radio_vintage, decor_coat_rack, decor_speaker, decor_speaker_small, decor_pillow, decor_pillow_long, decor_trashcan, decor_ceiling_fan |
+| Rugs | rug_basic, rug_round_cream, rug_circular_soft, rug_modern_geo, rug_vintage_persian, rug_sheepskin, rug_autumn_leaves, rug_spiderweb, rug_winter_pattern, rug_rectangular, rug_soft_square, rug_doormat |
 | Wall | wall_poster_simple, wall_art_abstract, wall_clock_round, wall_clock_basic, wall_mirror_oval, wall_shelf_floating, wall_photo_frame, wall_tapestry |
-| Surface Decor | surface_mug_coffee, surface_mug_cocoa, surface_book_stack, surface_book_open, surface_books, surface_candle_small, surface_candle_set, surface_plant_tiny, surface_photo_frame, surface_lamp_small, surface_vase_small, surface_typewriter, surface_toaster, surface_blender, surface_laptop |
+| Surface Decor | surface_mug_coffee, surface_mug_cocoa, surface_book_stack, surface_book_open, surface_books, surface_candle_small, surface_candle_set, surface_plant_tiny, surface_photo_frame, surface_lamp_small, surface_vase_small, surface_typewriter, surface_toaster, surface_blender, surface_laptop, surface_computer_mouse |
 | Outdoor | outdoor_table_bistro, outdoor_table_small, outdoor_planter_large, outdoor_planter_small, outdoor_flower_bed, outdoor_bird_bath, outdoor_chair_basic |
 
 ---
@@ -33,11 +33,11 @@ All game sprites are sourced from [Kenney.nl](https://kenney.nl) and are license
 - **License**: CC0 1.0 (Public Domain)
 - **Author**: Kenney (kenney.nl)
 
-**Assets used (13 items):**
+**Assets used (24 items):**
 
 | Category | Assets |
 |----------|--------|
-| Decor | decor_string_lights, decor_tree_holiday, decor_wreath_door |
+| Decor | decor_string_lights, decor_tree_holiday, decor_wreath_door, decor_nutcracker, decor_reindeer, decor_sled, decor_present_cube, decor_present_rectangle, decor_train_locomotive, decor_train_wagon, decor_menorah, decor_kinara, decor_lantern_hanging |
 | Wall | wall_autumn_wreath, wall_stockings |
 | Surface Decor | surface_snow_globe, surface_gingerbread |
 | Outdoor | outdoor_snowman, outdoor_string_lights |
@@ -51,13 +51,13 @@ All game sprites are sourced from [Kenney.nl](https://kenney.nl) and are license
 - **License**: CC0 1.0 (Public Domain)
 - **Author**: Kenney (kenney.nl)
 
-**Assets used (22 items):**
+**Assets used (28 items):**
 
 | Category | Assets |
 |----------|--------|
-| Decor | decor_pumpkin_small, decor_pumpkin_large, decor_jack_o_lantern, decor_candelabra |
+| Decor | decor_pumpkin_small, decor_pumpkin_large, decor_jack_o_lantern, decor_candelabra, decor_coffin |
 | Surface Decor | surface_mug_coffee, surface_mug_cocoa, surface_mug, surface_candle_small, surface_candle_set, surface_skull_candle, surface_sculpture |
-| Outdoor | outdoor_bench_wooden, outdoor_lantern_tall, outdoor_lights_path, outdoor_path_stones, outdoor_hay_bale, outdoor_scarecrow, outdoor_tombstone, outdoor_ghost_sheet, outdoor_fire_pit |
+| Outdoor | outdoor_bench_wooden, outdoor_lantern_tall, outdoor_lights_path, outdoor_path_stones, outdoor_hay_bale, outdoor_scarecrow, outdoor_tombstone, outdoor_ghost_sheet, outdoor_fire_pit, outdoor_pine_tree, outdoor_pine_crooked, outdoor_column, outdoor_urn_round, outdoor_urn_square |
 | Rugs | rug_spiderweb |
 | Wall | wall_bat_garland |
 
@@ -81,12 +81,12 @@ All game sprites are sourced from [Kenney.nl](https://kenney.nl) and are license
 - **License**: CC0 1.0 (Public Domain)
 - **Author**: Kenney (kenney.nl)
 
-**Assets used (4 items):**
+**Assets used (12 items):**
 
 | Category | Assets |
 |----------|--------|
 | Wall | wall_poster_simple, wall_art_abstract, wall_frame_ornate |
-| Outdoor | outdoor_bird_bath |
+| Outdoor | outdoor_bird_bath, outdoor_cart, outdoor_fountain_round, outdoor_fountain_square, outdoor_market_stall, outdoor_hedge, outdoor_hedge_curved, outdoor_hedge_gate, outdoor_windmill |
 
 ---
 
