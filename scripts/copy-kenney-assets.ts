@@ -277,6 +277,14 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   decor_menorah: { source: holidayPreviews, file: 'hanukkah-menorah-candles.png' },
   decor_kinara: { source: holidayPreviews, file: 'kwanzaa-kinara.png' },
   decor_lantern_hanging: { source: holidayPreviews, file: 'lantern-hanging.png' },
+
+  // ============ GRAVEYARD EXTRAS (6) ============
+  outdoor_pine_tree: { source: graveyardPreviews, file: 'pine.png' },
+  outdoor_pine_crooked: { source: graveyardPreviews, file: 'pine-crooked.png' },
+  decor_coffin: { source: graveyardPreviews, file: 'coffin.png' },
+  outdoor_column: { source: graveyardPreviews, file: 'column-large.png' },
+  outdoor_urn_round: { source: graveyardPreviews, file: 'urn-round.png' },
+  outdoor_urn_square: { source: graveyardPreviews, file: 'urn-square.png' },
 }
 
 // Track statistics

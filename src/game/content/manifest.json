@@ -44,6 +44,13 @@
       "height": 43,
       "description": "Decorative item: decor cocoa station"
     },
+    "decor_coffin": {
+      "type": "image",
+      "path": "/assets/sprites/decor/decor_coffin.png",
+      "width": 64,
+      "height": 64,
+      "description": "Decorative item: decor coffin"
+    },
     "decor_cushion_set": {
       "type": "image",
       "path": "/assets/sprites/decor/decor_cushion_set.png",
@@ -877,6 +884,13 @@
       "height": 78,
       "description": "Outdoor item: outdoor chair basic"
     },
+    "outdoor_column": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_column.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor column"
+    },
     "outdoor_fire_pit": {
       "type": "image",
       "path": "/assets/sprites/outdoor/outdoor_fire_pit.png",
@@ -925,6 +939,20 @@
       "width": 64,
       "height": 64,
       "description": "Outdoor item: outdoor path stones"
+    },
+    "outdoor_pine_crooked": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_pine_crooked.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor pine crooked"
+    },
+    "outdoor_pine_tree": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_pine_tree.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor pine tree"
     },
     "outdoor_planter_large": {
       "type": "image",
@@ -988,6 +1016,20 @@
       "width": 64,
       "height": 64,
       "description": "Outdoor item: outdoor tree small"
+    },
+    "outdoor_urn_round": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_urn_round.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor urn round"
+    },
+    "outdoor_urn_square": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_urn_square.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor urn square"
     },
     "rug_autumn_leaves": {
       "type": "image",
