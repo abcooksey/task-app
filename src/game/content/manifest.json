@@ -877,6 +877,13 @@
       "height": 64,
       "description": "Outdoor item: outdoor bird bath"
     },
+    "outdoor_cart": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_cart.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor cart"
+    },
     "outdoor_chair_basic": {
       "type": "image",
       "path": "/assets/sprites/outdoor/outdoor_chair_basic.png",
@@ -905,6 +912,20 @@
       "height": 19,
       "description": "Outdoor item: outdoor flower bed"
     },
+    "outdoor_fountain_round": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_fountain_round.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor fountain round"
+    },
+    "outdoor_fountain_square": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_fountain_square.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor fountain square"
+    },
     "outdoor_ghost_sheet": {
       "type": "image",
       "path": "/assets/sprites/outdoor/outdoor_ghost_sheet.png",
@@ -919,6 +940,27 @@
       "height": 64,
       "description": "Outdoor item: outdoor hay bale"
     },
+    "outdoor_hedge": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_hedge.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor hedge"
+    },
+    "outdoor_hedge_curved": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_hedge_curved.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor hedge curved"
+    },
+    "outdoor_hedge_gate": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_hedge_gate.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor hedge gate"
+    },
     "outdoor_lantern_tall": {
       "type": "image",
       "path": "/assets/sprites/outdoor/outdoor_lantern_tall.png",
@@ -932,6 +974,13 @@
       "width": 64,
       "height": 64,
       "description": "Outdoor item: outdoor lights path"
+    },
+    "outdoor_market_stall": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_market_stall.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor market stall"
     },
     "outdoor_path_stones": {
       "type": "image",
@@ -1030,6 +1079,13 @@
       "width": 64,
       "height": 64,
       "description": "Outdoor item: outdoor urn square"
+    },
+    "outdoor_windmill": {
+      "type": "image",
+      "path": "/assets/sprites/outdoor/outdoor_windmill.png",
+      "width": 64,
+      "height": 64,
+      "description": "Outdoor item: outdoor windmill"
     },
     "rug_autumn_leaves": {
       "type": "image",

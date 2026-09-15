@@ -285,6 +285,16 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   outdoor_column: { source: graveyardPreviews, file: 'column-large.png' },
   outdoor_urn_round: { source: graveyardPreviews, file: 'urn-round.png' },
   outdoor_urn_square: { source: graveyardPreviews, file: 'urn-square.png' },
+
+  // ============ FANTASY TOWN EXTRAS (8) ============
+  outdoor_cart: { source: fantasyTownPreviews, file: 'cart.png' },
+  outdoor_fountain_round: { source: fantasyTownPreviews, file: 'fountain-round.png' },
+  outdoor_fountain_square: { source: fantasyTownPreviews, file: 'fountain-square.png' },
+  outdoor_market_stall: { source: fantasyTownPreviews, file: 'stall.png' },
+  outdoor_hedge: { source: fantasyTownPreviews, file: 'hedge.png' },
+  outdoor_hedge_curved: { source: fantasyTownPreviews, file: 'hedge-curved.png' },
+  outdoor_hedge_gate: { source: fantasyTownPreviews, file: 'hedge-gate.png' },
+  outdoor_windmill: { source: fantasyTownPreviews, file: 'windmill.png' },
 }
 
 // Track statistics
