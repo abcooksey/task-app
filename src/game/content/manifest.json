@@ -282,6 +282,13 @@
       "height": 106,
       "description": "Furniture item: furniture armchair vintage"
     },
+    "furniture_bathtub": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_bathtub.png",
+      "width": 177,
+      "height": 163,
+      "description": "Furniture item: furniture bathtub"
+    },
     "furniture_bed_double": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_bed_double.png",
@@ -330,6 +337,20 @@
       "width": 67,
       "height": 137,
       "description": "Furniture item: furniture cabinet"
+    },
+    "furniture_cabinet_bathroom": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_bathroom.png",
+      "width": 37,
+      "height": 67,
+      "description": "Furniture item: furniture cabinet bathroom"
+    },
+    "furniture_cabinet_bathroom_drawer": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_cabinet_bathroom_drawer.png",
+      "width": 76,
+      "height": 96,
+      "description": "Furniture item: furniture cabinet bathroom drawer"
     },
     "furniture_chair_dining": {
       "type": "image",
@@ -436,6 +457,34 @@
       "height": 133,
       "description": "Furniture item: furniture reading chair"
     },
+    "furniture_shower": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_shower.png",
+      "width": 117,
+      "height": 197,
+      "description": "Furniture item: furniture shower"
+    },
+    "furniture_shower_round": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_shower_round.png",
+      "width": 116,
+      "height": 174,
+      "description": "Furniture item: furniture shower round"
+    },
+    "furniture_sink_bathroom": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sink_bathroom.png",
+      "width": 58,
+      "height": 81,
+      "description": "Furniture item: furniture sink bathroom"
+    },
+    "furniture_sink_square": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_sink_square.png",
+      "width": 76,
+      "height": 84,
+      "description": "Furniture item: furniture sink square"
+    },
     "furniture_sofa_basic": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_sofa_basic.png",
@@ -512,6 +561,13 @@
       "width": 78,
       "height": 95,
       "description": "Furniture item: furniture table side"
+    },
+    "furniture_toilet": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_toilet.png",
+      "width": 74,
+      "height": 98,
+      "description": "Furniture item: furniture toilet"
     },
     "furniture_tv_stand": {
       "type": "image",

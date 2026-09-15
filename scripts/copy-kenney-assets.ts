@@ -215,6 +215,16 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   // Pillows (for cozy vibes)
   decor_pillow: { source: furnitureIsometric, file: 'pillow_SE.png' },
   decor_pillow_long: { source: furnitureIsometric, file: 'pillowLong_SE.png' },
+
+  // ============ BATHROOM SET (8) ============
+  furniture_bathtub: { source: furnitureIsometric, file: 'bathtub_SE.png' },
+  furniture_shower: { source: furnitureIsometric, file: 'shower_SE.png' },
+  furniture_shower_round: { source: furnitureIsometric, file: 'showerRound_SE.png' },
+  furniture_sink_bathroom: { source: furnitureIsometric, file: 'bathroomSink_SE.png' },
+  furniture_sink_square: { source: furnitureIsometric, file: 'bathroomSinkSquare_SE.png' },
+  furniture_cabinet_bathroom: { source: furnitureIsometric, file: 'bathroomCabinet_SE.png' },
+  furniture_cabinet_bathroom_drawer: { source: furnitureIsometric, file: 'bathroomCabinetDrawer_SE.png' },
+  furniture_toilet: { source: furnitureIsometric, file: 'toilet_SE.png' },
 }
 
 // Track statistics
