@@ -252,6 +252,11 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   furniture_table_cloth: { source: furnitureIsometric, file: 'tableCloth_SE.png' },
   furniture_table_coffee_square: { source: furnitureIsometric, file: 'tableCoffeeSquare_SE.png' },
   furniture_table_cross: { source: furnitureIsometric, file: 'tableCross_SE.png' },
+
+  // ============ LAUNDRY (3) ============
+  furniture_washer: { source: furnitureIsometric, file: 'washer_SE.png' },
+  furniture_dryer: { source: furnitureIsometric, file: 'dryer_SE.png' },
+  furniture_washer_dryer_stacked: { source: furnitureIsometric, file: 'washerDryerStacked_SE.png' },
 }
 
 // Track statistics

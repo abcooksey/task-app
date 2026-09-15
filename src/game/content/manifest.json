@@ -478,6 +478,13 @@
       "height": 62,
       "description": "Furniture item: furniture dresser vintage"
     },
+    "furniture_dryer": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_dryer.png",
+      "width": 76,
+      "height": 102,
+      "description": "Furniture item: furniture dryer"
+    },
     "furniture_fridge": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_fridge.png",
@@ -736,6 +743,20 @@
       "width": 67,
       "height": 137,
       "description": "Furniture item: furniture wardrobe"
+    },
+    "furniture_washer": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_washer.png",
+      "width": 76,
+      "height": 102,
+      "description": "Furniture item: furniture washer"
+    },
+    "furniture_washer_dryer_stacked": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_washer_dryer_stacked.png",
+      "width": 76,
+      "height": 151,
+      "description": "Furniture item: furniture washer dryer stacked"
     },
     "outdoor_bench_wooden": {
       "type": "image",
