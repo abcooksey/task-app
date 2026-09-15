@@ -646,6 +646,20 @@
       "height": 109,
       "description": "Furniture item: furniture stove electric"
     },
+    "furniture_table_basic": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_basic.png",
+      "width": 133,
+      "height": 129,
+      "description": "Furniture item: furniture table basic"
+    },
+    "furniture_table_cloth": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_cloth.png",
+      "width": 133,
+      "height": 129,
+      "description": "Furniture item: furniture table cloth"
+    },
     "furniture_table_coffee": {
       "type": "image",
       "path": "/assets/sprites/furniture/furniture_table_coffee.png",
@@ -659,6 +673,20 @@
       "width": 110,
       "height": 102,
       "description": "Furniture item: furniture table coffee glass"
+    },
+    "furniture_table_coffee_square": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_coffee_square.png",
+      "width": 83,
+      "height": 83,
+      "description": "Furniture item: furniture table coffee square"
+    },
+    "furniture_table_cross": {
+      "type": "image",
+      "path": "/assets/sprites/furniture/furniture_table_cross.png",
+      "width": 134,
+      "height": 128,
+      "description": "Furniture item: furniture table cross"
     },
     "furniture_table_dining": {
       "type": "image",

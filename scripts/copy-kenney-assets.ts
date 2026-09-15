@@ -246,6 +246,12 @@ const assetMapping: Record<string, { source: string; file: string }> = {
   furniture_chair_accent: { source: furnitureIsometric, file: 'loungeDesignChair_SE.png' },
   furniture_bench_low: { source: furnitureIsometric, file: 'benchCushionLow_SE.png' },
   furniture_stool_square: { source: furnitureIsometric, file: 'stoolBarSquare_SE.png' },
+
+  // ============ MORE TABLES (4) ============
+  furniture_table_basic: { source: furnitureIsometric, file: 'table_SE.png' },
+  furniture_table_cloth: { source: furnitureIsometric, file: 'tableCloth_SE.png' },
+  furniture_table_coffee_square: { source: furnitureIsometric, file: 'tableCoffeeSquare_SE.png' },
+  furniture_table_cross: { source: furnitureIsometric, file: 'tableCross_SE.png' },
 }
 
 // Track statistics
